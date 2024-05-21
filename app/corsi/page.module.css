@@ -1,0 +1,62 @@
+.page {
+    background-color: white;
+    min-height: 100vh; /* Assicura che copra l'intera altezza della finestra */
+    padding: 20px;
+    text-align: center;
+  }
+   
+  .container {
+    max-width: 800px;
+    margin: 20px auto;
+    background-color: white;
+  }
+   
+  .gruppodilavoro {
+    width: 100%;
+    height: auto;
+    margin-bottom: 20px;
+  }
+   
+  .title {
+    font-size: 2em;
+    color: #333; /* Colore del testo più scuro per contrasto */
+    margin-bottom: 20px;
+  }
+   
+  .text {
+    font-size: 1.2em;
+    color: #555; /* Colore del testo più leggero */
+    line-height: 1.6;
+    margin-bottom: 20px;
+  }
+  .page {
+    background-color: white; /* Imposta lo sfondo bianco */
+    min-height: 100vh;
+    padding: 20px;
+    text-align: center;
+  }
+   
+  .swiper {
+    background-color: white;
+  }
+   
+  .immagine4 {
+    width: 500px; /* Dimensione iniziale dell'immagine */
+    height: auto;
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Aggiungi una transizione per l'animazione */
+   
+  }
+   
+   
+  .imageContainer{
+    background-color: white;
+  }
+   
+  /* page.module.css */
+   
+  .hero h2 {
+    margin-top: 100px;
+    font-size: 15px;
+    margin-left: 100px;
+    color: #A58C53; /* Colore specificato */
+  }

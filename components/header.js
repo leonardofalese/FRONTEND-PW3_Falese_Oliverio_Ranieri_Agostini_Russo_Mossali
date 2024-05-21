@@ -10,13 +10,11 @@ export default function Header() {
             <div className={styles.container}>
                 <Link className={styles.logo} href="/">
                 <Image src={logoImg} alt="ITS Incom" priority />
-            ITS Incom
                 </Link>
                 <nav className={styles.nav}>
                     <ul>
-                        <li><NavLink href="/about">About</NavLink></li>
-                        <li><NavLink href="/courses">Courses</NavLink></li>
-                        <li><NavLink href="/contact">Contact</NavLink></li>
+                        <li><NavLink href="/corsi">Login</NavLink></li>
+                        <li><Link href="/register" className={styles.link}><button className={styles.registerButton}>Registrati</button></Link></li>
                     </ul>
                 </nav>
             </div>

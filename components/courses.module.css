@@ -1,0 +1,45 @@
+.courses {
+    padding: 4rem 0;
+    text-align: center;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+}
+
+.courseCards {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.courseCard {
+    background: gainsboro;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    padding: 1.5rem;
+    margin: 1rem;
+    max-width: 300px;
+    flex: 1;
+}
+
+.h3 {
+    margin-bottom: 1rem;
+    color: black;
+}
+
+.p {
+    margin-bottom: 1rem;
+    color: black;
+}
+
+@media (max-width: 768px) {
+
+    .testimonial-cards,
+    .course-cards,
+    .news-cards {
+        flex-direction: column;
+        align-items: center;
+    }
+}
