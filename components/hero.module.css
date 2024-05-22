@@ -1,22 +1,50 @@
 .hero {
-    background: url('/path-to-your-image.jpg') no-repeat center center;
-    background-size: cover;
+    position: relative;
+    background: url('/images/ImageITS3.jpeg') no-repeat center center;
+    background-size: contain;
+    height: 75vh;
     color: #fff;
-    padding: 5rem 0;
+    padding: 5rem;
     text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
 }
 
-.container {
-    max-width: 800px;
-    margin: 0 auto;
+.hero::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: inherit;
+    background-size: cover;
+    filter: blur(3px);
+    z-index: 1;
+}
+
+.heroContent {
+    position: relative;
+    z-index: 2;
 }
 
 .h1 {
+    color: #56607d;
     font-size: 3rem;
+    margin-bottom: 1rem;
 }
 
 .p {
+    color: #222531;
     font-size: 1.5rem;
+    margin-bottom: 2rem;
+    font-size: larger;
+    font-weight: bold;
+    text-decoration: overline;
+    text-shadow: 2px 2px 4px rgba(60, 215, 255, 0.325);
+  
 }
 
 .ctaButton {
@@ -24,6 +52,34 @@
     background: #0070f3;
     color: #fff;
     border: none;
+    border-radius: 0.5rem;
+    font-size: larger;
+    font-weight: bold;
     cursor: pointer;
-    font-size: 1rem;
+    font-size: bold;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.ctaButton:hover {
+    background: #005bb5;
+}
+
+.ctaButton:active {
+    transform: scale(0.98);
+}
+
+@media (max-width: 600px) {
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+
+    .hero p {
+        font-size: 1.2rem;
+    }
+
+    .cta-button {
+        padding: 0.75rem 1.5rem;
+    }
 }

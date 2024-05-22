@@ -1,5 +1,5 @@
 .header {
-    background-color: #2ff8ddbb;
+    background-color: #26d4bdbb;
     color: #333;
 }
 
@@ -9,6 +9,7 @@
     align-items: center;
     margin-left: 5rem;
     margin-right: 5rem;
+    
 }
 
 .nav ul {
@@ -22,7 +23,8 @@
 }
 
 .logo img {
-    width: 20rem;
+    width: 12rem;
+    height: 6rem;
     object-fit: contain;
     filter: drop-shadow(0 0 0.75rem rgba(35, 205, 240, 0.915));
 }
@@ -50,7 +52,7 @@
 }
 
 .registerButton:hover {
-    background: #2a8bfa;
+    background: #005bb5;
 }
 
 .registerButton:active {

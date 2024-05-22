@@ -1,9 +1,40 @@
 .about {
-    padding: 4rem 0;
+    width: 100%;
+    padding: 2rem 0;
     text-align: center;
 }
 
+.h2 {
+    color: #56607d;
+    text-transform: uppercase;
+    font-size: 1.5rem;
+}
+
 .container {
-    max-width: 800px;
-    margin: 0 auto;
+    margin: auto;
+    max-width: 50rem;
+}
+
+.p {
+    color: #222531;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    padding: 1rem;
+    font-size: 1rem;
+    text-shadow: 2px 2px 4px rgba(60, 215, 255, 0.325);
+}
+
+.image {
+    width: 1000px;
+    height: 500px;
+    z-index: 2;
+}
+
+.containerImage {
+    width: 100%;
+    background-color: #222531;
+    /* filter: blur(8px); */
+    overflow: hidden;
+    z-index: 1;
 }

@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import NavLink from "./nav-link";
 import Image  from "next/image";
-import logoImg from '@/images/ITSLogo.jpeg';
+import logoImg from '@/public/images/ITSLogo.jpeg';
 import styles from '@/components/header.module.css';
 
 export default function Header() {

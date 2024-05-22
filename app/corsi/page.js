@@ -1,5 +1,6 @@
 'use client'
  
+import { Montserrat } from 'next/font/google'
 import styles from './page.module.css'
 import Image from 'next/image'
 import Image4 from '@/images/Image4.jpeg'
@@ -8,11 +9,11 @@ import Swiper from './swiper'
 import Header from '@/components/header';
 import Footer from '@/components/footer';
 
- 
+const montserrat = Montserrat({ subsets: ['latin'] })
  
 export default function Page() {
     return (
-        <body>
+        <body className={montserrat.className}>
             <Header />
             <div className={styles.imageContainer}>
                 <Image src={Image4} className={styles.Image4} alt="Immagine 4" />

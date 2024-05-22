@@ -17,8 +17,8 @@ export default function Home() {
         <meta name="description" content="Welcome to ITS Incom" />
       </Head>
       <Header />
+      <Hero />
       <main className={styles.main}>
-        <Hero />
         <About />
         <Courses />
         <Testimonials />

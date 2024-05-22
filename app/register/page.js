@@ -1,7 +1,11 @@
 'use client'
+
+import { Montserrat } from 'next/font/google'
 import styles from './page.module.css';
 import Header from '@/components/header';
 import Footer from '@/components/footer';
+
+const montserrat = Montserrat({ subsets: ['latin'] })
 
 export default function Register() {
     const handleSubmit = (e) => {
@@ -25,7 +29,7 @@ export default function Register() {
     };
 
     return (
-        <body>
+        <body className={montserrat.className}>
             <Header />
             <main className={styles.main}>
                 <div className={styles.container}>

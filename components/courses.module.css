@@ -1,5 +1,5 @@
 .courses {
-    padding: 4rem 0;
+    padding: 2rem 0;
     text-align: center;
 }
 
@@ -18,10 +18,55 @@
     background: gainsboro;
     border-radius: 8px;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-    padding: 1.5rem;
+    padding: 1rem;
     margin: 1rem;
     max-width: 300px;
-    flex: 1;
+    /* max-height: 450px; */
+}
+
+.ul {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    min-height: 220px; 
+    color: #56607d;
+    list-style: none;
+    row-gap: 1rem;
+}
+
+.containerButton {
+    display: flex;
+    justify-content: center;
+    align-items: end;
+} 
+
+.ctaButton {
+    padding: 0.5rem 1rem;
+    background: #0070f3;
+    color: #fff;
+    border: none;
+    border-radius: 0.5rem;
+    font-size: larger;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: bold;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.ctaButton:hover {
+    background: #005bb5;
+}
+
+.ctaButton:active {
+    transform: scale(0.98);
+}
+
+.h2 {
+    text-transform: uppercase;
+    color: #56607d;
 }
 
 .h3 {
@@ -29,16 +74,11 @@
     color: black;
 }
 
-.p {
-    margin-bottom: 1rem;
-    color: black;
-}
+@media ( max-width: 950px) {
 
-@media (max-width: 768px) {
-
-    .testimonial-cards,
-    .course-cards,
-    .news-cards {
+    .testimonialCards,
+    .courseCards,
+    .newsCards {
         flex-direction: column;
         align-items: center;
     }
