@@ -1,25 +1,30 @@
 import styles from '@/components/testimonials.module.css'
+import Image from 'next/image'
+import Student1 from '@/public/images/Studente.jpeg'
+import Student2 from '@/public/images/Studentessa.jpeg'
 
 export default function Testimonials() {
-    return (
-      <section className={styles.testimonials}>
-        <div className={styles.container}>
-          <h2 className={styles.h2}>What Our Students Say</h2>
-          <div className={styles.testimionalCards}>
-            <div className={styles.testimionalCard}>
-              <p className={styles.p}>"Joining ITS Incom was the best decision of my life. The courses are comprehensive and the instructors are top-notch."</p>
-              <h3 className={styles.h3}>John Doe</h3>
-            </div>
-            <div className={styles.testimionalCards}>
-              <p className={styles.p}>"The learning environment is excellent, and I feel well-prepared for my future career thanks to ITS Incom."</p>
-              <h3 className={styles.h3}>Jane Smith</h3>
-            </div>
-            <div className={styles.testimionalCards}>
-              <p className={styles.p}>"The support and resources available at ITS Incom have been invaluable to my learning experience."</p>
-              <h3 className={styles.h3}>Michael Brown</h3>
-            </div>
-          </div>
+  return (
+    <section className={styles.testimonials}>
+      <h2 className={styles.h2}>I Nostri Studenti</h2>
+      <div className={styles.testimonialStudent1}>
+        <Image src={Student1} alt="Student 1" className={styles.testimonialImage} />
+        <div className={styles.testimonialText}>
+          <h3 className={styles.h3Student1}>Riccardo F.</h3>
+          <p className={styles.pStudent1}>
+            "ITS Incom ha cambiato la mia vita. Ho imparato così tanto e ora ho una carriera che amo nel mondo della programmazione."
+          </p>
         </div>
-      </section>
-    );
-  };
+      </div>
+      <div className={styles.testimonialStudent2}>
+        <div className={styles.testimonialText}>
+          <h3 className={styles.h3Student2}>Alessia N.</h3>
+          <p className={styles.pStudent2}>
+            "Grazie a ITS Incom, ho potuto sviluppare le competenze necessarie per il mio lavoro dei sogni del mondo della comunicazione."
+          </p>
+        </div>
+        <Image src={Student2} alt="Student 2" className={styles.testimonialImage} />
+      </div>
+    </section>
+  );
+};

@@ -64,10 +64,11 @@
 
 .ctaButton:hover {
     background: #005bb5;
+    transform: scale(1.05);
 }
 
 .ctaButton:active {
-    transform: scale(0.98);
+    transform: scale(1);
 }
 
 @media (max-width: 600px) {

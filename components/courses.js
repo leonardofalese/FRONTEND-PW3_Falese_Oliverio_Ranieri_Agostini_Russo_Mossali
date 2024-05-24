@@ -4,7 +4,7 @@ export default function Courses() {
   return (
     <section className={styles.courses}>
       <div className={styles.container}>
-        <h2 className={styles.h2}>Our Courses</h2>
+        <h2 className={styles.h2}>I Nostri Corsi</h2>
         <div className={styles.courseCards}>
           <div className={styles.courseCard}>
             <h3 className={styles.h3}>Area Programmazione</h3>
@@ -46,7 +46,7 @@ export default function Courses() {
               <button className={styles.ctaButton}>Scopri i corsi</button>
           </div>
           <div className={styles.courseCard}>
-            <h3 className={styles.h3}>Cyber Security</h3>
+            <h3 className={styles.h3}>Area Comunicazione</h3>
               <ul className={styles.ul}>
                 <li className={styles.li}>
                   Corso Digital Tourism, Hospitality & Events

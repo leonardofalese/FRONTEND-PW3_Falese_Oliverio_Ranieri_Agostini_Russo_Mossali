@@ -15,13 +15,13 @@
 }
 
 .courseCard {
-    background: gainsboro;
-    border-radius: 8px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    background: rgb(255, 255, 255);
+    border-radius: 10px;
+    border: rgb(214, 214, 214);
+    box-shadow: 10px 5px 5px 10px rgb(214, 214, 214, 1);
     padding: 1rem;
     margin: 1rem;
-    max-width: 300px;
-    /* max-height: 450px; */
+    max-width: 350px;
 }
 
 .ul {
@@ -29,8 +29,9 @@
     flex-direction: column;
     text-align: center;
     justify-content: center;
-    min-height: 220px; 
-    color: #56607d;
+    min-height: 220px;
+    font-style: italic;
+    color: black;
     list-style: none;
     row-gap: 1rem;
 }
@@ -38,7 +39,7 @@
 .containerButton {
     display: flex;
     justify-content: center;
-    align-items: end;
+    align-items: flex-end;
 } 
 
 .ctaButton {
@@ -58,27 +59,30 @@
 
 .ctaButton:hover {
     background: #005bb5;
+    transform: scale(1.05);
 }
 
 .ctaButton:active {
-    transform: scale(0.98);
+    transform: scale(1);
 }
 
 .h2 {
+    font-size: 2.1rem;
+    text-align: center;
     text-transform: uppercase;
     color: #56607d;
+    margin-bottom: 0.5rem;
 }
 
 .h3 {
+    font-size: 1.9rem;
     margin-bottom: 1rem;
-    color: black;
+    color: black
 }
 
-@media ( max-width: 950px) {
+@media ( max-width: 725px) {
 
-    .testimonialCards,
-    .courseCards,
-    .newsCards {
+    .courseCards {
         flex-direction: column;
         align-items: center;
     }

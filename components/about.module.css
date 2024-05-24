@@ -7,7 +7,7 @@
 .h2 {
     color: #56607d;
     text-transform: uppercase;
-    font-size: 1.5rem;
+    font-size: 2rem;
 }
 
 .container {
@@ -17,24 +17,50 @@
 
 .p {
     color: #222531;
-    display: flex;
     text-align: center;
     justify-content: center;
     padding: 1rem;
-    font-size: 1rem;
+    margin-bottom: 1rem;
+    font-size: 20px;
     text-shadow: 2px 2px 4px rgba(60, 215, 255, 0.325);
 }
 
+.span {
+    font-weight: bold;
+    color: #222531;
+    text-transform: uppercase;
+  }
+
 .image {
-    width: 1000px;
-    height: 500px;
-    z-index: 2;
+    padding: 1rem;
+    width: 80%;
+    height: 80%;
+    border-radius: 2rem;
 }
 
 .containerImage {
+    position: relative;
+}
+
+.containerImage::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
-    background-color: #222531;
-    /* filter: blur(8px); */
-    overflow: hidden;
-    z-index: 1;
+    height: 100%;
+    background-color: rgba(190, 247, 255, 0.253);
+    /* background-color:#d7d7d7; */
+    /* background-image: url('/public/images/ImageITS2.jpeg') no-repeat center center; */
+    background-size: cover;
+    filter: blur(8px);
+    z-index: -1;
+}
+
+@media (max-width: 1200px) {
+    .image {
+        width: 95%;
+        height: 95%;
+    }
+    
 }

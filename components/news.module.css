@@ -1,9 +1,6 @@
 .news {
-    background: gainsboro;
-    padding: 4rem 0;
+    padding: 2rem 0;
     text-align: center;
-    border-radius: 1rem;
-    margin: 2rem;
 }
 
 .container {
@@ -18,18 +15,20 @@
 }
 
 .newsCard {
-    background: #fff;
-    border-radius: 8px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    border: rgb(214, 214, 214);
+    box-shadow: 10px 5px 5px 10px rgb(214, 214, 214, 1);
+
     padding: 1.5rem;
     margin: 1rem;
     max-width: 300px;
-    flex: 1;
 }
 
 .h2 {
-    margin-bottom: 1rem;
-    color: black
+    font-size: 2rem;
+    text-align: center;
+    text-transform: uppercase;
+    color: #56607d;
 }
 
 .h3 {
@@ -43,11 +42,9 @@
     color: black;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 700px) {
 
-    .testimonial-cards,
-    .course-cards,
-    .news-cards {
+    .newsCards {
         flex-direction: column;
         align-items: center;
     }

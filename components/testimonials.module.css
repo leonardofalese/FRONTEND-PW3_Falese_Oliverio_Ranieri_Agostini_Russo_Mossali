@@ -1,53 +1,94 @@
 .testimonials {
-    background: #f9f9f9;
-    padding: 2rem;
-    text-align: center;
-    border-radius: 1rem;
-    margin: 2rem;
+    width: 80%;
 }
 
-.container {
+.testimonialStudent1 {
     display: flex;
-    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
-.testimonialCards {
+.testimonialStudent2 {
     display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 2rem;
 }
 
-.testimonialCard {
-    background: #fff;
-    border-radius: 8px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-    padding: 1.5rem;
+.testimonialImage {
     margin: 1rem;
-    max-width: 300px;
-    flex: 1;
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.testimonialText {
+    max-width: 100rem;
 }
 
 .h2 {
-    margin-bottom: 1rem;
-    color: black
+    margin-top: 2rem;
+    font-size: 2rem;
+    text-align: center;
+    text-transform: uppercase;
+    color: #56607d;
 }
 
-.h3 {
-    font-size: 1.2rem;
-    margin-bottom: 1rem;
-    color: black;
+.h3Student1 {
+    margin: 1rem;
+    font-size: 1.8rem;
+    color: #333;
 }
 
-.p {
-    font-style: italic;
-    color: black;
+.pStudent1 {
+    font-size: 1.3rem;
+    margin: 1rem;
+    color: #666;
 }
 
-@media (max-width: 768px) {
-    .testimonial-cards,
-    .course-cards,
-    .news-cards {
-      flex-direction: column;
-      align-items: center;
+.h3Student2 {
+    text-align: end;
+    margin: 1rem;
+    font-size: 1.8rem;
+    color: #333;
+}
+
+.pStudent2 {
+    text-align: end;
+    font-size: 1.3rem;
+    margin: 1rem;
+    color: #666;
+}
+
+@media (max-width: 900px) {
+    .testimonialStudent1 {
+        flex-direction: column;
+        align-items: center;
     }
-  }
+
+    .testimonialStudent2 {
+        flex-direction: column-reverse;
+        align-items: center;
+    }
+
+    .h3Student1 {
+        text-align: center;
+        font-size: 2rem
+    }
+
+    .h3Student2 {
+        text-align: center;
+        font-size: 2rem
+    }
+
+    .pStudent1 {
+        text-align: center;
+        font-size: 1.5rem
+    }
+
+    .pStudent2 {
+        text-align: center;
+        font-size: 1.5rem
+    }
+}

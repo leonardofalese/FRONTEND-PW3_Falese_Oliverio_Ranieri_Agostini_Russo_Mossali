@@ -1,0 +1,99 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    padding: 2rem;
+}
+
+.socialChannels {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 3rem;
+    padding: 1rem 0;
+}
+
+.h2 {
+    font-size: 2rem;
+    text-align: center;
+    text-transform: uppercase;
+    color: #56607d;
+}
+
+.socialIconL {
+    font-size: 3rem;
+    color: #666;
+    transition: color 0.3s ease;
+}
+
+.socialIconL:hover {
+    width: 50px;
+    color: #0e76a8;
+}
+
+.socialIconI {
+    font-size: 3rem;
+    color: #666;
+    transition: color 0.3s ease;
+}
+
+.socialIconI:hover {
+    color: #fff;
+    justify-content: center;
+    width: 50px;
+    border-radius: 20%;
+    background: radial-gradient(circle farthest-corner at 35% 95%, #fec564, transparent 50%), radial-gradient(circle farthest-corner at 0 140%, #fec564, transparent 50%), radial-gradient(ellipse farthest-corner at 0 -25%, #5258cf, transparent 50%), radial-gradient(ellipse farthest-corner at 20% -50%, #5258cf, transparent 50%), radial-gradient(ellipse farthest-corner at 100% 0, #893dc2, transparent 50%), radial-gradient(ellipse farthest-corner at 60% -20%, #893dc2, transparent 50%), radial-gradient(ellipse farthest-corner at 100% 100%, #d9317a, transparent), linear-gradient(#6559ca, #bc318f 30%, #e33f5f 50%, #f77638 70%, #fec66d 100%);
+}
+
+.socialIconY {
+    font-size: 3rem;
+    color: #666;
+    transition: color 0.3s ease;
+}
+
+.socialIconY:hover {
+    width: 58px;
+    color: #c4302b;
+}
+
+.socialIconF {
+    font-size: 3rem;
+    color: #666;
+    transition: color 0.3s ease;
+}
+
+.socialIconF:hover {
+    width: 50px;
+    color: #3B5998;
+}
+
+.socialIconT {
+    font-size: 3rem;
+    color: #666;
+    transition: color 0.3s ease;
+}
+
+.socialIconT:hover {
+    width: 50px;
+    color: #111111;
+    filter: drop-shadow(2px 0px 0px #FD3E3E) drop-shadow(-2px -2px 0px #4DE8F4);
+}
+
+@media (max-width: 545px) {
+    .socialChannels {
+      justify-content: center;
+      flex: 0 1 calc(20% - 0.5rem);
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+    }
+}
+
+    @media (max-width: 440px) {
+        .socialChannels {
+          justify-content: center;
+          flex: 0 1 calc(20% - 0.5rem);
+          display: flex;
+          justify-content: center;
+          gap: 4rem;
+        }
+  }
