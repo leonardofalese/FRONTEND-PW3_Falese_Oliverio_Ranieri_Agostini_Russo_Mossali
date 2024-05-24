@@ -12,7 +12,7 @@ export default function Header() {
                 </Link>
                 <nav className={styles.nav}>
                     <ul>
-                        <li><Link href="/" className={styles.link}><button className={styles.registerButton}>Login</button></Link></li>
+                        <li><Link href="/login" className={styles.link}><button className={styles.registerButton}>Login</button></Link></li>
                     </ul>
                 </nav>
             </div>

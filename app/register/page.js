@@ -4,14 +4,6 @@ import Link from 'next/link'
 import styles from './page.module.css';
 import Header from '@/app/register/components/header';
 import Footer from '@/components/footer';
-import { Montserrat } from 'next/font/google';
-
-const montserrat = Montserrat({
-    weight: ['400', '700'],
-    style: ['normal', 'italic'],
-    subsets: ['latin'],
-    display: 'swap',
-})
 
 export default function Register() {
     const handleSubmit = (e) => {
@@ -29,19 +21,18 @@ export default function Register() {
             password,
         });
 
-        // Sostituisci il form con un messaggio di conferma
         const formContainer = document.getElementById('form-container');
         formContainer.innerHTML = '<p class="' + styles.successMessage + '">La tua Registrazione è avvenuta con Successo, Benvenuto!</p>';
     };
 
     return (
-        <body className={montserrat.className}>
+        <body>
             <Header />
             <main className={styles.main}>
                 <section className={styles.section}>
                     <div className={styles.container}>
                         <h1 className={styles.h1}>Hai già un Account? Effettua il Login</h1>
-                        <button className={styles.button} type="submit"><Link className={styles.link} href={'/'}>Login</Link></button>
+                        <Link className={styles.link} href={'/login'}><button className={styles.button} type="submit">Login</button></Link>
                         <hr className={styles.hr}></hr>
                         <div id="form-container">
                             <h1 className={styles.h1}>Registrati</h1>
@@ -68,7 +59,7 @@ export default function Register() {
                         </div>
                     </div>
                     <div className={styles.paragrafo}>
-                        <p className={styles.p}>Benvenuto a ITS INCOM! Sei pronto a trasformare il tuo Futuro? Registrati oggi stesso per accedere a un'ampia gamma di Corsi che ti permetteranno di acquisire competenze all'avanguardia. Non perdere l'opportunità di fare il primo passo verso una Carriera di Successo. Unisciti a noi e scopri il tuo potenziale!</p>
+                        <p className={styles.p}>Benvenuto a ITS INCOM! Sei pronto a trasformare il tuo Futuro? Registrati oggi stesso per accedere a un'ampia gamma di corsi che ti permetteranno di acquisire competenze all'avanguardia. Non perdere l'opportunità di fare il primo passo verso una carriera di cuccesso. Unisciti a noi e scopri il tuo potenziale!</p>
                     </div>
                 </section>
             </main>

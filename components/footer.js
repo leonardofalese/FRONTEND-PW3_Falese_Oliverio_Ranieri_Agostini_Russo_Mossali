@@ -14,6 +14,7 @@ export default function Footer() {
                         <h2 className={styles.h2}>Naviga</h2>
                         <ul className={styles.ul}>
                             <li className={styles.li}><Link className={styles.link} href="/">Home</Link></li>
+                            <li className={styles.li}><Link className={styles.link} href="/login">Login</Link></li>
                             <li className={styles.li}><Link className={styles.link} href="/register">Registrati</Link></li>
                         </ul>
                     </div>
