@@ -1,23 +1,29 @@
 'use client'
-
+ 
 import Link from 'next/link'
 import styles from './page.module.css';
 import Header from '@/app/login/components/header';
 import Footer from '@/components/footer';
-import { useState } from 'react';
-
+ 
 export default function LoginPage() {
-    const [email, setEmail] = useState('');
-    const [password, setPassword] = useState('');
-
     const handleLogin = (e) => {
         e.preventDefault();
-        console.log('Email:', email);
+ 
+        const email = document.getElementById("email").value;
+        const password = document.getElementById("password").value;
+ 
+ 
+        console.log({
+            email,
+            password,
+        });
+ 
+        console.log('email:', email);
         console.log('Password:', password);
-
+ 
     };
-
-
+ 
+ 
     return (
         <body>
             <Header />
@@ -32,18 +38,18 @@ export default function LoginPage() {
                             <form onSubmit={handleLogin} className={styles.form}>
                                 <label className={styles.label}>
                                     Email:
-                                    <input className={styles.input} type="email" value={email} onChange={(e) => setEmail(e.target.value)} required />
+                                    <input className={styles.input} type="email" id="email" placeholder="Inserisci l'email..." required />
                                 </label>
                                 <label className={styles.label}>
                                     Password:
-                                    <input className={styles.input} type="password" value={password} onChange={(e) => setPassword(e.target.value)} required />
+                                    <input className={styles.input} type="password" id="password" placeholder='Inserisci la password...' required />
                                 </label>
-                                <button className={styles.button} type="submit">Login</button>
+                                <Link className={styles.link} href={'/amministratore'}><button className={styles.button} type="submit">Login</button></Link>
                             </form>
                         </div>
                     </div>
                     <div className={styles.paragrafo}>
-                        <p className={styles.p}>Benvenuto a ITS INCOM! Sei pronto a trasformare il tuo Futuro? Registrati oggi stesso per accedere a un'ampia gamma di corsi che ti permetteranno di acquisire competenze all'avanguardia. Non perdere l'opportunità di fare il primo passo verso una carriera di cuccesso. Unisciti a noi e scopri il tuo potenziale!</p>
+                        <p className={styles.p}>Bentornato in ITS Incom! Accedi al tuo account per iniziare o continuare il tuo percorso di apprendimento. Qui troverai tutti i tuoi corsi, risorse e strumenti necessari per raggiungere i tuoi obiettivi. Non vediamo l'ora di aiutarti a crescere e a sviluppare le tue competenze. Inserisci le tue credenziali!</p>
                     </div>
                 </section>
             </main>

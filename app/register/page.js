@@ -59,7 +59,7 @@ export default function Register() {
                         </div>
                     </div>
                     <div className={styles.paragrafo}>
-                        <p className={styles.p}>Benvenuto a ITS INCOM! Sei pronto a trasformare il tuo Futuro? Registrati oggi stesso per accedere a un'ampia gamma di corsi che ti permetteranno di acquisire competenze all'avanguardia. Non perdere l'opportunità di fare il primo passo verso una carriera di cuccesso. Unisciti a noi e scopri il tuo potenziale!</p>
+                        <p className={styles.p}>Benvenuto in ITS INCOM! Sei pronto a trasformare il tuo Futuro? Registrati oggi stesso per accedere a un'ampia gamma di corsi che ti permetteranno di acquisire competenze all'avanguardia. Non perdere l'opportunità di fare il primo passo verso una carriera di cuccesso. Unisciti a noi e scopri il tuo potenziale!</p>
                     </div>
                 </section>
             </main>
@@ -67,3 +67,4 @@ export default function Register() {
         </body>
     );
 }
+

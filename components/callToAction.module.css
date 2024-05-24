@@ -61,17 +61,18 @@
     text-align: center;
     text-transform: uppercase;
     text-decoration: none;
-    transition: background-color 0.3s;
+    transition: 1s;
     cursor: pointer;
 }
 
 .registerButton:hover {
     background: #005bb5;
     transform: scale(1.05);
+    transition: 1s;
 }
 
 .registerButton:active {
-    transform: scale(1);
+    transform: scale(2);
 }
 
 @media (max-width: 1200px) {

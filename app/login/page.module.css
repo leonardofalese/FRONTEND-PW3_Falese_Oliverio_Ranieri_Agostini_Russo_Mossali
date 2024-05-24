@@ -20,10 +20,12 @@
     margin: 1rem;
     color: #666;
 }
+
 .hr {
     margin: 2rem;
     color: #000000;
 }
+
 .container {
     display: flex;
     flex-direction: column;
@@ -41,30 +43,30 @@
     color: #fff;
     display: flex;
     justify-content: center;
-  }
- 
+}
+
 .h1 {
     text-align: center;
     color: #56607d;
     margin-bottom: 1rem;
 }
- 
+
 .form {
     display: flex;
     flex-direction: column;
 }
- 
+
 .div {
     margin-bottom: 1.2rem;
 }
- 
+
 .label {
     display: block;
     margin-bottom: 0.5rem;
     font-weight: bold;
     color: #000000;
 }
- 
+
 .input {
     width: 100%;
     padding: 0.6rem;
@@ -73,13 +75,13 @@
     background-color: #ffffffbc;
     transition: border-color 0.3s;
 }
- 
- 
+
+
 .input:not(:placeholder-shown) {
     color: #000000;
     /* Cambia il colore del testo quando l'input non è vuoto */
 }
- 
+
 .button {
     display: flex;
     align-items: center;
@@ -98,7 +100,7 @@
     transition: background-color 0.3s;
     cursor: pointer;
 }
- 
+
 .button:hover {
     background: #005bb5;
     transform: scale(1.05);
@@ -107,18 +109,18 @@
 .button:active {
     transform: scale(1);
 }
- 
+
 .formMessage {
     text-align: center;
     margin-top: 1.5rem;
     color: #27ae60;
 }
- 
+
 .successMessage {
     text-align: center;
     font-size: 1.2rem;
     color: #0070f3;
-  }
+}
 
 @media (max-width: 980px) {
     .section {
@@ -129,12 +131,12 @@
     .container {
         min-width: 200px;
     }
-    
+
 }
 
 @media (max-width: 500px) {
     .container {
         min-width: 100px;
     }
-    
+
 }
