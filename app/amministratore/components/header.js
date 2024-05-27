@@ -3,22 +3,50 @@ import Image from "next/image";
 import logoImg from '@/public/images/ITSLogo.jpeg';
 import admin from '@/public/images/Admin.jpeg';
 import styles from '@/app/amministratore/components/header.module.css';
-
+import { useEffect } from "react";
 
 export default function Header() {
+
+    const handleLogout = async () => {
+        try {
+            const response = await fetch('http://localhost:8080/auth/logout', {
+                method: 'DELETE',
+                credentials: 'include',
+                headers: {
+                    'Content-Type': 'application/json',
+                }
+            });
+
+            console.log('Response:', response);
+
+            if (response.ok) {
+                console.log('Logout successful');
+                window.location.href = '/login';  // Reindirizza alla pagina di login dopo il logout
+            } else {
+                console.log(response);
+                const errorMessage = await response.text();
+                console.log('Logout failed', response.status, errorMessage);
+            }
+        } catch (error) {
+            console.log('Error:', error);
+        }
+    };
+
     return (
         <header className={styles.header}>
             <div className={styles.container}>
                 <Link className={styles.logo} href="/">
-                    <Image src={logoImg} alt="ITS Incom" priority />
+                    <Image src={logoImg} alt="ITS Incom" priority/>
                 </Link>
-                    <div className={styles.dropdown}>
-                        <Image className={styles.admin} src={admin} />
-                        <div className={styles.dropdownContent}>
-                            <Link className={styles.link} href={'/login'}><p className={styles.p}>Logout</p></Link>
-                        </div>
+                <div className={styles.dropdown}>
+                    <Image className={styles.admin} src={admin} alt="Admin"/>
+                    <div className={styles.dropdownContent}>
+                        <Link href="#">
+                            <p className={styles.p} onClick={handleLogout}>Logout</p>
+                        </Link>
                     </div>
                 </div>
+            </div>
         </header>
     );
-};
+}

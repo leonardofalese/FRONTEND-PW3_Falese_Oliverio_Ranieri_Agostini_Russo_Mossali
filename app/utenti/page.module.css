@@ -8,11 +8,6 @@
     margin-top: 2rem;
 }
 
-.table {
-    width: 100%;
-    border-collapse: collapse;
-}
-
 .card {
     background: rgb(255, 255, 255);
     border-radius: 10px;
@@ -21,29 +16,27 @@
     padding: 2rem;
     margin: 1rem;
 }
+.table {
+    width: 100%;
+    border-collapse: collapse;
+}
 
 .th,
 .td {
     border: 1px solid #ddd;
     padding: 8px;
     text-align: left;
+    color: black; /* Imposta colore testo nero */
 }
 
 .th {
     background-color: #f2f2f2;
+    color: black; /* Imposta colore testo nero */
 }
 
 .td {
     transition: background-color 0.3s ease;
-}
-
-
-.amministratore {
-    background-color: #e6f7ff;
-}
-
-.studente {
-    background-color: #e6ffe6;
+    color: black; /* Imposta colore testo nero */
 }
 
 @media (max-width: 1020px) {

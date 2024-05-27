@@ -1,46 +1,46 @@
 'use client';
 
+import { useEffect, useState } from 'react';
 import Header from '@/app/amministratore/components/header';
-import { useRouter } from 'next/navigation';
-import styles from './page.module.css';
 import Footer from '@/components/footer';
+import styles from './page.module.css';
 
-export default function Utenti() {
-    const router = useRouter();
+export default function Corsi() {
+    const [corsi, setCorsi] = useState([]);
 
-    const corsi = [
-        { id: 1, nome: 'AR - VR e Game Developer', categoria: 'Area Programmazione' },
-        { id: 2, nome: 'Data analists', categoria: 'Area Programmazione' },
-        { id: 3, nome: 'Web developer', categoria: 'Area Programmazione' },
-        { id: 4, nome: 'Cloud Developer', categoria: 'Area Programmazione' },
-        { id: 5, nome: 'Digital Twin', categoria: 'Area Nuove Tecnologie' },
-        { id: 6, nome: 'Sistemista Cloud e Cybersecurity', categoria: 'Area Nuove Tecnologie' },
-        { id: 7, nome: 'Manufacturing Design', categoria: 'Area Nuove Tecnologie' },
-        { id: 8, nome: 'Networking e Security', categoria: 'Area Nuove Tecnologie' },
-        { id: 9, nome: 'Internet of Things', categoria: 'Area Nuove Tecnologie' },
-        { id: 10, nome: 'Digital Tourism, Hospitality & Events', categoria: 'Area Comunicazione' },
-        { id: 11, nome: 'Sales Management', categoria: 'Area Comunicazione' },
-        { id: 12, nome: 'Digital Marketing Manager', categoria: 'Area Comunicazione' },
-        { id: 13, nome: 'Web Designer', categoria: 'Area Comunicazione' }
-        
-    ];
-    
-    const corsiOrdinati = corsi.sort((a, b) => {
-        const categorie = ['Area programmazione', 'Area Nuove Tecnologie', 'Area Comunicazione'];
-        return categorie.indexOf(a.categoria) - categorie.indexOf(b.categoria);
-    });
+    useEffect(() => {
+        const fetchCourses = async () => {
+            try {
+                const response = await fetch('http://localhost:8080/courses', {
+                    method: 'GET',
+                    credentials: 'include',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                });
 
-    const getRowClass = (categoria) => {
-        if (categoria.includes('Programmazione')) {
-            return styles.areaProgrammazione;
-        } else if (categoria.includes('Nuove Tecnologie')) {
-            return styles.areaNuoveTecnologie;
-        } else if (categoria.includes('Comunicazione')) {
-            return styles.areaComunicazione;
-        } else {
-            return '';
-        }
-    };
+                if (response.ok) {
+                    const data = await response.json();
+                    console.log('Dati corsi:', data);
+                    // Ordina i corsi prima per categoria e poi per nome
+                    const sortedCorsi = data.sort((a, b) => {
+                        if (a.category === b.category) {
+                            return a.name.localeCompare(b.name);
+                        }
+                        return a.category.localeCompare(b.category);
+                    });
+                    setCorsi(sortedCorsi);
+                } else {
+                    const errorMessage = await response.text();
+                    console.log('Errore durante il fetch dei corsi:', response.status, errorMessage);
+                }
+            } catch (error) {
+                console.log('Errore:', error);
+            }
+        };
+
+        fetchCourses();
+    }, []);
 
     return (
         <div>
@@ -48,24 +48,22 @@ export default function Utenti() {
             <h1 className={styles.h1}>Corsi disponibili</h1>
             <div className={styles.container}>
                 <div className={styles.card}>
-                <table className={styles.table}>
-                    <thead>
+                    <table className={styles.table}>
+                        <thead>
                         <tr>
-                            <th className={styles.th}>ID</th>
                             <th className={styles.th}>Nome</th>
                             <th className={styles.th}>Categoria</th>
                         </tr>
-                    </thead>
-                    <tbody>
-                    {corsiOrdinati.map((corso) => (
-                            <tr key={corso.id} className={getRowClass(corso.categoria)}>
-                                <td className={styles.td}>{corso.id}</td>
-                                <td className={styles.td}>{corso.nome}</td>
-                                <td className={styles.td}>{corso.categoria}</td>
+                        </thead>
+                        <tbody>
+                        {corsi.map((corso) => (
+                            <tr key={corso.idCourse} className={styles.tr}>
+                                <td className={styles.td}>{corso.name}</td>
+                                <td className={styles.td}>{corso.category}</td>
                             </tr>
                         ))}
-                    </tbody>
-                </table>
+                        </tbody>
+                    </table>
                 </div>
             </div>
             <Footer />
