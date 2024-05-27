@@ -27,11 +27,10 @@ export default function Register() {
                 headers: {
                     'Content-Type': 'application/json',
                 },
-                body: JSON.stringify({firstName, lastName, email, password}),
+                body: JSON.stringify({ name: firstName, surname: lastName, email, password }),
             });
 
             if(response.ok) {
-                const data = await response.json();
                 console.log('Login succesful', data);
                 window.location.href = '/amministratore';
             }else{
@@ -59,11 +58,11 @@ export default function Register() {
                             <form onSubmit={handleSubmit} className={styles.form}>
                                 <div className={styles.div}>
                                     <label className={styles.label} htmlFor="firstName">Nome</label>
-                                    <input className={styles.input} id="firstName" name="firstName" placeholder='Inserisci il nome...' type="text" required />
+                                    <input className={styles.input} id="firstName" name="name" placeholder='Inserisci il nome...' type="text" required />
                                 </div>
                                 <div className={styles.div}>
                                     <label className={styles.label} htmlFor="lastName">Cognome</label>
-                                    <input className={styles.input} id="lastName" name="lastName" placeholder='Inserisci il cognome...' type="text" required />
+                                    <input className={styles.input} id="lastName" name="surname" placeholder='Inserisci il cognome...' type="text" required />
                                 </div>
                                 <div className={styles.div}>
                                     <label className={styles.label} htmlFor="email">Email</label>
@@ -74,7 +73,7 @@ export default function Register() {
                                     <input className={styles.input} id="password" name="password" placeholder='Inserisci la password...' type="password" required />
                                 </div>
                                 <button className={styles.button} type="submit">Registrati</button>
-                                <p className={styles.formMessagge}></p>
+                                <p className={styles.formMessage}></p>
                             </form>
                         </div>
                     </div>
