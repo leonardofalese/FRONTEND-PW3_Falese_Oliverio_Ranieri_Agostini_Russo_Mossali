@@ -1,8 +1,9 @@
-'use client'
+'use client';
 
+import { useEffect, useState } from 'react';
 import Image from 'next/image';
-import Utente from '@/public/images/Utenti.jpeg'
-import Corsi from '@/public/images/corsi.jpeg'
+import Utente from '@/public/images/Utenti.jpeg';
+import Corsi from '@/public/images/corsi.jpeg';
 import styles from './page.module.css';
 import Header from '@/app/amministratore/components/header';
 import Footer from '@/components/footer';
@@ -11,73 +12,74 @@ import { useRouter } from 'next/navigation';
 export default function Amministratore() {
     const router = useRouter();
 
-    try{
-        const response = fetch('http://localhost:8080/users', {
-            method: 'GET',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify({id, nome, cognome, email}),
-        });
+    const [userData, setUserData] = useState({
+        id: 0,
+        name: "",
+        surname: "",
+        email: ""
+    });
 
-        if(response.ok) {
-            const data = response.json();
-            console.log('Login succesful', data);
-            if(data.ruolo == "ADMIN") {
-                //fai qualcosa
-                const amministratore = {
-                    id: {id},
-                    nome: {nome},
-                    cognome: {cognome},
-                    email: {email}
-                };
-                return (
-                    <body>
-                        <Header />
-                        <main className={styles.main}>
-                            <section className={styles.section}>
-                                <div className={styles.container}>
-                                    <h1 className={styles.h1}>Benvenuto Amministratore</h1>
-                                    <hr className={styles.hr}></hr>
-                                    <div className={styles.info}>
-                                        <p className={styles.p}><strong>ID:</strong> {amministratore.id}</p>
-                                        <p className={styles.p}><strong>Nome:</strong> {amministratore.nome}</p>
-                                        <p className={styles.p}><strong>Cognome:</strong> {amministratore.cognome}</p>
-                                        <p className={styles.p}><strong>Email:</strong> {amministratore.email}</p>
-                                    </div>
-                                </div>
-                                <div className={styles.container2}>
-                                    <p className={styles.h1}>Cosa vuoi visualizzare?</p>
-                                    <div className={styles.buttons}>
-                                        <div className={styles.button}>
-                                            <button className={styles.container3} onClick={() => navigateTo('/utenti')}>Utenti Registrati
-                                                <Image className={styles.image} src={Utente} alt='Utente Registrati'></Image>
-                                            </button>
-                                        </div>
-                                        <div className={styles.button}>
-                                            <button className={styles.container3} onClick={() => navigateTo('/corsiAmministratore')}>Corsi disponibili
-                                                <Image className={styles.image} src={Corsi} alt='Corsi Disponibili'></Image>
-                                            </button>
-                                        </div>
-                                    </div>
-                                </div>
-            
-                            </section>
-                        </main>
-                        <Footer />
-                    </body>
-                );
-            } else {
-                //fai altro
+    useEffect(() => {
+        const fetchUserData = async () => {
+            try {
+                const response = await fetch('http://localhost:8080/users', {
+                    method: 'GET',
+                    credentials: 'include',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                });
+                if (response.ok) {
+                    const userData = await response.json();
+                    setUserData(userData);
+                } else {
+                    throw new Error('Errore nella richiesta dei dati utente');
+                }
+            } catch (error) {
+                console.error('Errore durante il recupero dei dati utente:', error);
             }
-        }else{
-            console.log('Login failed', response.statusText);
-        }
-    }catch(error){
-        console.log('Error:', error);
-    }
+        };
+
+        fetchUserData();
+    }, []);
 
     const navigateTo = (path) => {
         router.push(path);
     };
+
+    return (
+        <body>
+        <Header />
+        <main className={styles.main}>
+            <section className={styles.section}>
+                <div className={styles.container}>
+                    <h1 className={styles.h1}>Benvenuto Amministratore</h1>
+                    <hr className={styles.hr}></hr>
+                    <div className={styles.info}>
+                        <p className={styles.p}><strong>ID:</strong> {userData.id}</p>
+                        <p className={styles.p}><strong>Nome:</strong> {userData.name}</p>
+                        <p className={styles.p}><strong>Cognome:</strong> {userData.surname}</p>
+                        <p className={styles.p}><strong>Email:</strong> {userData.email}</p>
+                    </div>
+                </div>
+                <div className={styles.container2}>
+                    <p className={styles.h1}>Cosa vuoi visualizzare?</p>
+                    <div className={styles.buttons}>
+                        <div className={styles.button}>
+                            <button className={styles.container3} onClick={() => navigateTo('/utenti')}>Utenti Registrati
+                                <Image className={styles.image} src={Utente} alt='Utente Registrati' />
+                            </button>
+                        </div>
+                        <div className={styles.button}>
+                            <button className={styles.container3} onClick={() => navigateTo('/corsiAmministratore')}>Corsi disponibili
+                                <Image className={styles.image} src={Corsi} alt='Corsi Disponibili' />
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+        <Footer />
+        </body>
+    );
 }

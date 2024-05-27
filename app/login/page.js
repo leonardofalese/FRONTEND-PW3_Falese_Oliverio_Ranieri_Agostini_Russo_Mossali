@@ -21,26 +21,31 @@ export default function LoginPage() {
         console.log('email:', email);
         console.log('Password:', password);
 
-        try{
+        try {
             const response = await fetch('http://localhost:8080/auth/login', {
                 method: 'POST',
+                credentials: 'include',
                 headers: {
                     'Content-Type': 'application/json',
                 },
-                body: JSON.stringify({email, password}),
+                body: JSON.stringify({ email, password }),
             });
 
-            if(response.ok) {
-                const data = await response.json();
-                console.log('Login succesful', data);
+            console.log('Response:', response);
+
+            if (response.ok) {
+                console.log('Login successful');
                 window.location.href = '/amministratore';
-            }else{
-                console.log('Login failed', response.statusText);
+            } else {
+                console.log(response);
+                const errorMessage = await response.text();
+                console.log('Login failed', response.status, errorMessage);
             }
-        }catch(error){
+        } catch (error) {
             console.log('Error:', error);
         }
- 
+
+
     };
  
  
@@ -64,7 +69,7 @@ export default function LoginPage() {
                                     Password:
                                     <input className={styles.input} type="password" id="password" placeholder='Inserisci la password...' required />
                                 </label>
-                                <Link className={styles.link} href={'/amministratore'}><button className={styles.button} type="submit">Login</button></Link>
+                                <button className={styles.button} onClick={handleLogin} type="submit">Login</button>
                             </form>
                         </div>
                     </div>
