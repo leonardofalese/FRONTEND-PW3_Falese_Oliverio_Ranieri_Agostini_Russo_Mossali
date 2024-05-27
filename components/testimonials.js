@@ -1,7 +1,9 @@
-import styles from '@/components/testimonials.module.css'
 import Image from 'next/image'
+
 import Student1 from '@/public/images/Studente.jpeg'
 import Student2 from '@/public/images/Studentessa.jpeg'
+
+import styles from '@/components/testimonials.module.css'
 
 export default function Testimonials() {
   return (

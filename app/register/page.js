@@ -1,9 +1,11 @@
 'use client'
 
 import Link from 'next/link'
-import styles from './page.module.css';
-import Header from '@/app/register/components/header';
-import Footer from '@/components/footer';
+
+import Header from '@/app/register/components/header'
+import Footer from '@/components/footer'
+
+import styles from './page.module.css'
 
 export default function Register() {
     const handleSubmit = async (e) => {
@@ -21,7 +23,7 @@ export default function Register() {
             password,
         });
 
-        try{
+        try {
             const response = await fetch('http://localhost:8080/auth/register', {
                 method: 'POST',
                 headers: {
@@ -30,13 +32,13 @@ export default function Register() {
                 body: JSON.stringify({ name: firstName, surname: lastName, email, password }),
             });
 
-            if(response.ok) {
+            if (response.ok) {
                 console.log('Login succesful', data);
                 window.location.href = '/amministratore';
-            }else{
+            } else {
                 console.log('Login failed', response.statusText);
             }
-        }catch(error){
+        } catch (error) {
             console.log('Error:', error);
         }
 

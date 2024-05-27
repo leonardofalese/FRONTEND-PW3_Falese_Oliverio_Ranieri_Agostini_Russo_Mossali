@@ -9,7 +9,7 @@
     align-items: center;
     margin-left: 5rem;
     margin-right: 5rem;
-    
+
 }
 
 .nav ul {
@@ -31,7 +31,7 @@
 
 .link {
     text-decoration: none;
-  }
+}
 
 .registerButton {
     display: flex;
@@ -60,7 +60,6 @@
     transform: scale(1);
 }
 
-/* Stile responsive per schermi piccoli */
 @media (max-width: 700px) {
     .registerButton {
         font-size: 0.9rem;

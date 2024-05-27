@@ -1,9 +1,12 @@
-import Link from 'next/link';
-import Image from "next/image";
-import logoImg from '@/public/images/ITSLogo.jpeg';
-import admin from '@/public/images/Admin.jpeg';
-import styles from '@/app/amministratore/components/header.module.css';
-import { useEffect } from "react";
+import Link from 'next/link'
+import Image from "next/image"
+
+import logoImg from '@/public/images/ITSLogo.jpeg'
+import admin from '@/public/images/Admin.jpeg'
+
+import { useEffect } from "react"
+
+import styles from '@/app/amministratore/components/header.module.css'
 
 export default function Header() {
 
@@ -21,7 +24,7 @@ export default function Header() {
 
             if (response.ok) {
                 console.log('Logout successful');
-                window.location.href = '/login';  // Reindirizza alla pagina di login dopo il logout
+                window.location.href = '/login';
             } else {
                 console.log(response);
                 const errorMessage = await response.text();
@@ -36,12 +39,12 @@ export default function Header() {
         <header className={styles.header}>
             <div className={styles.container}>
                 <Link className={styles.logo} href="/">
-                    <Image src={logoImg} alt="ITS Incom" priority/>
+                    <Image src={logoImg} alt="ITS Incom" priority />
                 </Link>
                 <div className={styles.dropdown}>
-                    <Image className={styles.admin} src={admin} alt="Admin"/>
+                    <Image className={styles.admin} src={admin} alt="Admin" />
                     <div className={styles.dropdownContent}>
-                        <Link href="#">
+                        <Link className={styles.link} href="#">
                             <p className={styles.p} onClick={handleLogout}>Logout</p>
                         </Link>
                     </div>

@@ -80,20 +80,20 @@
 
 @media (max-width: 545px) {
     .socialChannels {
-      justify-content: center;
-      flex: 0 1 calc(20% - 0.5rem);
-      display: flex;
-      justify-content: center;
-      gap: 2rem;
+        justify-content: center;
+        flex: 0 1 calc(20% - 0.5rem);
+        display: flex;
+        justify-content: center;
+        gap: 2rem;
     }
 }
 
-    @media (max-width: 440px) {
-        .socialChannels {
-          justify-content: center;
-          flex: 0 1 calc(20% - 0.5rem);
-          display: flex;
-          justify-content: center;
-          gap: 4rem;
-        }
-  }
+@media (max-width: 440px) {
+    .socialChannels {
+        justify-content: center;
+        flex: 0 1 calc(20% - 0.5rem);
+        display: flex;
+        justify-content: center;
+        gap: 4rem;
+    }
+}

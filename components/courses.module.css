@@ -46,7 +46,7 @@
     display: flex;
     justify-content: center;
     align-items: flex-end;
-} 
+}
 
 .ctaButton {
     padding: 0.5rem 1rem;
@@ -86,7 +86,7 @@
     color: black
 }
 
-@media ( max-width: 725px) {
+@media (max-width: 725px) {
 
     .courseCards {
         flex-direction: column;

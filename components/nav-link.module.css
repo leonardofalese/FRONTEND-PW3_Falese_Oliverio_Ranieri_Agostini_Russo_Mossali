@@ -1,23 +1,23 @@
 .link {
-    text-decoration: none;
-    color: #333;
-    font-weight: bold;
-    padding: 0.5rem 1rem;
-    border-radius: 0.5rem;
-  }
-  
-  .link:hover,
-  .link:active {
-    background: linear-gradient(90deg, #0070f3, #2a8bfa);
-    background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    text-shadow: 0 0 18px rgba(35, 205, 240, 0.915);
-  }
-  
-  .active {
-    background: linear-gradient(90deg, #0070f3, #2a8bfa);
-    background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-  }
+  text-decoration: none;
+  color: #333;
+  font-weight: bold;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+}
+
+.link:hover,
+.link:active {
+  background: linear-gradient(90deg, #0070f3, #2a8bfa);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0 0 18px rgba(35, 205, 240, 0.915);
+}
+
+.active {
+  background: linear-gradient(90deg, #0070f3, #2a8bfa);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}

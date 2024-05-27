@@ -1,9 +1,11 @@
-'use client';
+'use client'
 
-import { useEffect, useState } from 'react';
-import Header from '@/app/amministratore/components/header';
-import Footer from '@/components/footer';
-import styles from './page.module.css';
+import { useEffect, useState } from 'react'
+
+import Header from '@/app/amministratore/components/header'
+import Footer from '@/components/footer'
+
+import styles from './page.module.css'
 
 export default function Corsi() {
     const [corsi, setCorsi] = useState([]);
@@ -22,7 +24,7 @@ export default function Corsi() {
                 if (response.ok) {
                     const data = await response.json();
                     console.log('Dati corsi:', data);
-                    // Ordina i corsi prima per categoria e poi per nome
+
                     const sortedCorsi = data.sort((a, b) => {
                         if (a.category === b.category) {
                             return a.name.localeCompare(b.name);
@@ -50,18 +52,18 @@ export default function Corsi() {
                 <div className={styles.card}>
                     <table className={styles.table}>
                         <thead>
-                        <tr>
-                            <th className={styles.th}>Nome</th>
-                            <th className={styles.th}>Categoria</th>
-                        </tr>
+                            <tr>
+                                <th className={styles.th}>Nome</th>
+                                <th className={styles.th}>Categoria</th>
+                            </tr>
                         </thead>
                         <tbody>
-                        {corsi.map((corso) => (
-                            <tr key={corso.idCourse} className={styles.tr}>
-                                <td className={styles.td}>{corso.name}</td>
-                                <td className={styles.td}>{corso.category}</td>
-                            </tr>
-                        ))}
+                            {corsi.map((corso) => (
+                                <tr key={corso.idCourse} className={styles.tr}>
+                                    <td className={styles.td}>{corso.name}</td>
+                                    <td className={styles.td}>{corso.category}</td>
+                                </tr>
+                            ))}
                         </tbody>
                     </table>
                 </div>

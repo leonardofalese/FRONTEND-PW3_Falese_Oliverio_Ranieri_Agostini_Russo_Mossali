@@ -1,5 +1,6 @@
-import Link from 'next/link';
-import styles from '@/components/footer.module.css';
+import Link from 'next/link'
+
+import styles from '@/components/footer.module.css'
 
 export default function Footer() {
     return (
@@ -31,7 +32,7 @@ export default function Footer() {
                         <p className={styles.p}>21052 Busto Arsizio(VA)</p>
                     </div>
                     <div className={styles.footerSection}>
-                    <iframe src={'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2789.735857360548!2d8.8509754!3d45.6360424!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47868b8a578a3fd5%3A0xae587e0bfe4fa313!2sITS%20INCOM%20Academy!5e0!3m2!1sit!2sit!4v1716468653510!5m2!1sit!2sit" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade'} className={styles.map}></iframe>
+                        <iframe src={'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2789.735857360548!2d8.8509754!3d45.6360424!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47868b8a578a3fd5%3A0xae587e0bfe4fa313!2sITS%20INCOM%20Academy!5e0!3m2!1sit!2sit!4v1716468653510!5m2!1sit!2sit" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade'} className={styles.map}></iframe>
                     </div>
                 </div>
                 <div className={styles.footerBottom}>

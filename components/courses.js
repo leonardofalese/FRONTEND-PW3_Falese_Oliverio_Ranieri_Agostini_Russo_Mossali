@@ -1,5 +1,6 @@
+// import Link from 'next/link'
+
 import styles from '@/components/courses.module.css'
-import Link from 'next/link';
 
 export default function Courses() {
 

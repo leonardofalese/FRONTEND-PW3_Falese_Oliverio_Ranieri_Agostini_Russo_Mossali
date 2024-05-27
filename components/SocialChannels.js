@@ -1,6 +1,8 @@
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faLinkedin, faInstagram, faYoutube, faFacebook, faTiktok } from '@fortawesome/free-brands-svg-icons';
 import Link from 'next/link'
+
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faLinkedin, faInstagram, faYoutube, faFacebook, faTiktok } from '@fortawesome/free-brands-svg-icons'
+
 import styles from '@/components/SocialChannels.module.css'
 
 export default function SocialChannels() {

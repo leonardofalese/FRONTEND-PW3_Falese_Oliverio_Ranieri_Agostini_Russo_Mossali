@@ -1,12 +1,14 @@
-'use client';
+'use client'
 
-import { useEffect, useState } from "react";
-import { useRouter } from 'next/navigation';
+import { useEffect, useState } from "react"
+
+import { useRouter } from 'next/navigation'
+
 import Header from '@/app/amministratore/components/header';
-import Footer from '@/components/footer';
-import styles from './page.module.css';
+import Footer from '@/components/footer'
 
-// Pagina principale
+import styles from './page.module.css'
+
 export default function Utenti() {
     const router = useRouter();
     const [utenti, setUtenti] = useState([]);
@@ -26,9 +28,7 @@ export default function Utenti() {
                     const data = await response.json();
                     console.log('Dati utenti:', data);
 
-                    // Recupero dei dati degli utenti con i nomi dei corsi
                     const usersWithCourseNames = await Promise.all(data.map(async (utente) => {
-                        // Recupera il nome del corso associato all'utente
                         const courseResponse = await fetch(`http://localhost:8080/courses/${utente.courseId}`, {
                             method: 'GET',
                             credentials: 'include',
@@ -39,15 +39,14 @@ export default function Utenti() {
 
                         if (courseResponse.ok) {
                             const courseData = await courseResponse.json();
-                            const courseName = courseData.name; // Assumi che il nome del corso sia presente nell'oggetto courseData
+                            const courseName = courseData.name;
                             return { ...utente, courseName };
                         } else {
                             console.log('Errore durante il fetch del corso associato all\'utente:', courseResponse.status);
-                            return utente; // Mantieni l'utente senza il nome del corso in caso di errore
+                            return utente;
                         }
                     }));
 
-                    // Ordina gli utenti per cognome e poi per nome
                     const sortedUsers = usersWithCourseNames.sort((a, b) => {
                         if (a.surname === b.surname) {
                             return a.name.localeCompare(b.name);
@@ -77,28 +76,28 @@ export default function Utenti() {
                     <div className={styles.overflow}>
                         <table className={styles.table}>
                             <thead>
-                            <tr>
-                                <th className={styles.th}>ID</th>
-                                <th className={styles.th}>Nome</th>
-                                <th className={styles.th}>Cognome</th>
-                                <th className={styles.th}>Email</th>
-                                <th className={styles.th}>Ruolo</th>
-                                <th className={styles.th}>Stato</th>
-                                <th className={styles.th}>Corso Selezionato</th>
-                            </tr>
+                                <tr>
+                                    <th className={styles.th}>ID</th>
+                                    <th className={styles.th}>Nome</th>
+                                    <th className={styles.th}>Cognome</th>
+                                    <th className={styles.th}>Email</th>
+                                    <th className={styles.th}>Ruolo</th>
+                                    <th className={styles.th}>Stato</th>
+                                    <th className={styles.th}>Corso Selezionato</th>
+                                </tr>
                             </thead>
                             <tbody>
-                            {utenti.map((utente) => (
-                                <tr key={utente.id} className={styles.tr}>
-                                    <td className={styles.td}>{utente.id}</td>
-                                    <td className={styles.td}>{utente.name}</td>
-                                    <td className={styles.td}>{utente.surname}</td>
-                                    <td className={styles.td}>{utente.email}</td>
-                                    <td className={styles.td}>{utente.role}</td>
-                                    <td className={styles.td}>{utente.state}</td>
-                                    <td className={styles.td}>{utente.courseName}</td>
-                                </tr>
-                            ))}
+                                {utenti.map((utente) => (
+                                    <tr key={utente.id} className={styles.tr}>
+                                        <td className={styles.td}>{utente.id}</td>
+                                        <td className={styles.td}>{utente.name}</td>
+                                        <td className={styles.td}>{utente.surname}</td>
+                                        <td className={styles.td}>{utente.email}</td>
+                                        <td className={styles.td}>{utente.role}</td>
+                                        <td className={styles.td}>{utente.state}</td>
+                                        <td className={styles.td}>{utente.courseName}</td>
+                                    </tr>
+                                ))}
                             </tbody>
                         </table>
                     </div>

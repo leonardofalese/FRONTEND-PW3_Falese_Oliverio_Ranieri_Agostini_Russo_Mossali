@@ -1,6 +1,8 @@
-import styles from '@/components/about.module.css';
-import Image from "next/image";
-import img from '@/public/images/ImageITS2.jpeg';
+import Image from "next/image"
+
+import img from '@/public/images/ImageITS2.jpeg'
+
+import styles from '@/components/about.module.css'
 
 export default function About() {
     return (
@@ -13,6 +15,5 @@ export default function About() {
                 <Image className={styles.image} src={img}></Image>
             </div>
         </section>
-
     );
 };
