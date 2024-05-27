@@ -6,7 +6,7 @@ import Header from '@/app/login/components/header';
 import Footer from '@/components/footer';
  
 export default function LoginPage() {
-    const handleLogin = (e) => {
+    const handleLogin = async (e) => {
         e.preventDefault();
  
         const email = document.getElementById("email").value;
@@ -20,6 +20,26 @@ export default function LoginPage() {
  
         console.log('email:', email);
         console.log('Password:', password);
+
+        try{
+            const response = await fetch('http://localhost:8080/auth/login', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({email, password}),
+            });
+
+            if(response.ok) {
+                const data = await response.json();
+                console.log('Login succesful', data);
+                window.location.href = '/amministratore';
+            }else{
+                console.log('Login failed', response.statusText);
+            }
+        }catch(error){
+            console.log('Error:', error);
+        }
  
     };
  

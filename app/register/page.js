@@ -6,7 +6,7 @@ import Header from '@/app/register/components/header';
 import Footer from '@/components/footer';
 
 export default function Register() {
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
 
         const firstName = document.getElementById('firstName').value;
@@ -20,6 +20,26 @@ export default function Register() {
             email,
             password,
         });
+
+        try{
+            const response = await fetch('http://localhost:8080/auth/register', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({firstName, lastName, email, password}),
+            });
+
+            if(response.ok) {
+                const data = await response.json();
+                console.log('Login succesful', data);
+                window.location.href = '/amministratore';
+            }else{
+                console.log('Login failed', response.statusText);
+            }
+        }catch(error){
+            console.log('Error:', error);
+        }
 
         const formContainer = document.getElementById('form-container');
         formContainer.innerHTML = '<p class="' + styles.successMessage + '">La tua Registrazione è avvenuta con Successo, Benvenuto!</p>';
