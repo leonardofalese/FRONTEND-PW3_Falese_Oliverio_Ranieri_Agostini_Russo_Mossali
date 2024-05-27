@@ -1,62 +1,636 @@
 .page {
-    background-color: white;
-    min-height: 100vh; /* Assicura che copra l'intera altezza della finestra */
-    padding: 20px;
-    text-align: center;
+  min-height: 100vh;
+  padding: 20px;
+  text-align: center;
+}
+ 
+.container {
+  max-width: 800px;
+  margin: 20px auto;
+}
+ 
+.gruppodilavoro {
+  width: 100%;
+  height: auto;
+  margin-bottom: 20px;
+}
+ 
+.title {
+  font-size: 2em;
+  color: #333;
+  margin-bottom: 20px;
+}
+ 
+.text {
+  font-size: 1.2em;
+  color: #555;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+ 
+.immagine4 {
+  width: 600px;
+  height: auto;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  margin-top: 50px;
+}
+ 
+.immagine4:hover {
+  transform: scale(0.8); /* Rimpicciolisci l'immagine al 80% della dimensione originale */
+}
+ 
+ 
+.h2 {
+
+  margin-right: 290px;
+  margin-top: -330px;
+  font-size: 18px;
+  font-weight: 200;
+  color: black;
+  text-align: right;
+}
+ 
+.image {
+  margin-top: 25rem;
+}
+ 
+.h3 {
+
+  font-size: 17px;
+  color: black;
+  text-align: right;
+  margin-right: 550px;
+  margin-top: 10px;
+  font-weight: 200;
+}
+ 
+.image {
+  margin-top: 50rem;
+}
+ 
+.h4 {
+
+  font-size: 12px;
+  color: black;
+  text-align: right;
+  margin-right: 40px;
+  margin-top: 30px;
+  font-weight: 200;
+}
+ 
+.comunicazione {
+
+  font-size: 12px;
+  color: black;
+  text-align: right;
+  margin-right: 108px;
+  margin-top: 10px;
+}
+ 
+.collaboriamo {
+
+  font-size: 12px;
+  color: black;
+  text-align: right;
+  margin-right: 73px;
+  margin-top: 10px;
+}
+ 
+.offrirti {
+
+  font-size: 12px;
+  color: black;
+  text-align: right;
+  margin-right: 90px;
+  margin-top: 10px;
+}
+ 
+.strettamano {
+  width: 800px;
+  height: auto;
+  margin-top: 150px;
+  margin-left: 600px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, margin-top 0.3s ease, margin-left 0.3s ease, filter 0.3s ease;
+}
+ 
+ 
+.strettamano:hover {
+  transform: scale(0.8); /* Rimpicciolisci l'immagine al 80% della dimensione originale */
+}
+ 
+.offerta {
+
+  font-size: 12px;
+  color: black;
+  text-align: right;
+  margin-right: 800px;
+  margin-top: -240px;
+}
+ 
+.futuro {
+
+  font-size: 12px;
+  color: black;
+  text-align: right;
+  margin-right: 805px;
+  margin-top: 10px;
+}
+ 
+.consulta {
+
+  font-size: 12px;
+  color: black;
+  text-align: right;
+  margin-right: 940px;
+  margin-top: 10px;
+}
+ 
+.programmazione {
+
+  font-size: 18px;
+  color: black;
+  text-align: right;
+  margin-right: 580px;
+  margin-top: 230px;
+}
+ 
+/* Media Queries per la versione responsive */
+@media (max-width: 1200px) {
+  .strettamano {
+    margin-left: 100px; /* Adjust for smaller screens */
   }
-   
-  .container {
-    max-width: 800px;
-    margin: 20px auto;
-    background-color: white;
+ 
+  .offerta,
+  .futuro,
+  .consulta {
+    margin-right: 50px; /* Adjust for smaller screens */
   }
-   
-  .gruppodilavoro {
-    width: 100%;
-    height: auto;
-    margin-bottom: 20px;
+ 
+  .programmazione {
+    margin-right: 150px; /* Adjust for smaller screens */
   }
-   
+}
+ 
+@media (max-width: 768px) {
   .title {
-    font-size: 2em;
-    color: #333; /* Colore del testo più scuro per contrasto */
-    margin-bottom: 20px;
+    font-size: 1.5em;
   }
-   
-  .text {
+ 
+  .text,
+  .h2,
+  .h3,
+  .h4,
+  .comunicazione,
+  .collaboriamo,
+  .offrirti,
+  .offerta,
+  .futuro,
+  .consulta,
+  .programmazione {
+    font-size: 1em;
+    margin-right: 20px;
+    margin-top: 10px;
+  }
+ 
+  .immagine4,
+  .strettamano {
+    width: 100%;
+    margin-left: 0;
+    margin-top: 20px;
+  }
+ 
+  .image {
+    margin-top: 10rem;
+  }
+}
+ 
+@media (max-width: 480px) {
+  .title {
     font-size: 1.2em;
-    color: #555; /* Colore del testo più leggero */
-    line-height: 1.6;
-    margin-bottom: 20px;
   }
-  .page {
-    background-color: white; /* Imposta lo sfondo bianco */
-    min-height: 100vh;
-    padding: 20px;
-    text-align: center;
+ 
+  .text,
+  .h2,
+  .h3,
+  .h4,
+  .comunicazione,
+  .collaboriamo,
+  .offrirti,
+  .offerta,
+  .futuro,
+  .consulta,
+  .programmazione {
+    font-size: 0.9em;
+    margin-right: 10px;
+    margin-top: 5px;
   }
-   
-  .swiper {
-    background-color: white;
+ 
+  .immagine4,
+  .strettamano {
+    width: 100%;
+    margin-left: 0;
+    margin-top: 10px;
   }
-   
-  .immagine4 {
-    width: 500px; /* Dimensione iniziale dell'immagine */
-    height: auto;
-    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Aggiungi una transizione per l'animazione */
-   
+ 
+ 
+  .image {
+    margin-top: 5rem;
   }
-   
-   
-  .imageContainer{
-    background-color: white;
+}
+ 
+ 
+ 
+.jumbotron {
+  padding-top: var(--jumbotron-padding-y);
+  padding-bottom: var(--jumbotron-padding-y);
+  margin-bottom: 0;
+  background-color: #fff;
+}
+@media (min-width: 768px) {
+  .jumbotron {
+    padding-top: calc(var(--jumbotron-padding-y) * 2);
+    padding-bottom: calc(var(--jumbotron-padding-y) * 2);
   }
-   
-  /* page.module.css */
-   
-  .hero h2 {
-    margin-top: 100px;
-    font-size: 15px;
-    margin-left: 100px;
-    color: #A58C53; /* Colore specificato */
+}
+ 
+.jumbotron p:last-child {
+  margin-bottom: 0;
+}
+ 
+.jumbotron-heading {
+  font-weight: 300;
+}
+ 
+.jumbotron .container {
+  max-width: 40rem;
+}
+ 
+ 
+ 
+.box-shadow { box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05); }
+ 
+.cardCountainer {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(300px, 1fr));
+  gap: 40px;
+  padding: 0 100px; /* Spazio ai lati */
+}
+ 
+ 
+.cardProva{
+  transform: scale(0.8);
+ 
+}
+/* Stile base per la classe .cardImmagine */
+.cardImmagine {
+  height: 190px;
+  inline-size: fit-content;
+  margin: 0 auto;
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Aggiungi transizione anche per l'ombra */
+  border-radius: 8px; /* Bordo leggermente arrotondato */
+  overflow: hidden; /* Assicura che l'ombra non esca dall'elemento */
+}
+ 
+/* Effetto hover per la classe .cardImmagine */
+.cardImmagine:hover {
+  transform: scale(0.8); /* Ingrandisce l'immagine del 10% */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Aggiunge un'ombra sottile */
+}
+ 
+.title1 {
+  font-family: 'Montserrat', sans-serif;
+  margin-left: 50px; /* Sposta il testo più a destra */
+  margin-top: 20px; /* Sposta il testo più in basso */
+}
+ 
+.text100{
+   color: #555;
+   font-size: 15px;
+}
+ 
+ 
+.areacomunicazione{
+  font-family: 'Montserrat', sans-serif;
+  font-size: 18px;
+  color: black;
+  text-align: right;
+  margin-right: 580px;
+  margin-top: 40px;
+}
+ 
+.areacomunicazione {
+  background-color: #f5f5f5; /* Colore di sfondo grigio chiaro */
+  border: 2px solid #333; /* Bordo nero */
+  border-radius: 8px; /* Angoli arrotondati */
+  padding: 20px; /* Spaziatura interna */
+  margin: 20px; /* Spaziatura esterna */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Effetto ombra */
+  font-family: 'Montserrat', sans-serif;
+  color: #333; /* Colore del testo */
+  transition: transform 0.4s ease, box-shadow 0.4s ease, background-color 0.4s ease; /* Transizioni per animazioni */
+}
+ 
+.areacomunicazione div {
+  font-size: 18px; /* Dimensione del testo */
+  font-weight: bold; /* Testo in grassetto */
+  text-align: center; /* Testo centrato */
+  transition: color 0.4s ease; /* Transizione per il colore del testo */
+}
+ 
+.areacomunicazione:hover {
+  transform: scale(1.05); /* Ingrandisce leggermente l'elemento */
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3); /* Aumenta l'ombra */
+  background-color: #e0e0e0; /* Cambia colore di sfondo */
+}
+ 
+.areacomunicazione:hover div {
+  color: #007BFF; /* Cambia colore del testo */
+}
+ 
+ 
+ 
+ 
+.areaprogrammazione1 {
+  background-color: #f5f5f5; /* Colore di sfondo grigio chiaro */
+  border: 2px solid #333; /* Bordo nero */
+  border-radius: 8px; /* Angoli arrotondati */
+  padding: 20px; /* Spaziatura interna */
+  margin: 20px; /* Spaziatura esterna */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Effetto ombra */
+  color: #333; /* Colore del testo */
+  transition: transform 0.4s ease, box-shadow 0.4s ease, background-color 0.4s ease; /* Transizioni per animazioni */
+ 
+    font-family: 'Montserrat', sans-serif;
+    font-size: 18px;
+    text-align: right;
+    margin-right: 25px;
+    margin-top: 195px;
+}
+ 
+.areaprogrammazione1 div {
+  font-size: 18px; /* Dimensione del testo */
+  font-weight: bold; /* Testo in grassetto */
+  text-align: center; /* Testo centrato */
+  transition: color 0.4s ease; /* Transizione per il colore del testo */
+}
+ 
+.areaprogrammazione1:hover:hover {
+  transform: scale(1.05); /* Ingrandisce leggermente l'elemento */
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3); /* Aumenta l'ombra */
+  background-color: #e0e0e0; /* Cambia colore di sfondo */
+}
+ 
+.areaprogrammazione1:hover div {
+  color: #007BFF; /* Cambia colore del testo */
+}
+ 
+ 
+/* Stile per il container dell'immagine */
+.imageContainer {
+  width: 100%;
+  margin: 0 auto; /* Centrare il container */
+}
+ 
+/* Stile per l'immagine */
+.banner {
+  width: 100vw; /* Occupa l'intera larghezza della viewport */
+  height: auto; /* Altezza automatica proporzionale alla larghezza */
+  display: block; /* Evita il margin collapsing */
+}
+ 
+/* Stile per l'immagine */
+.banner {
+  width: 100vw; /* Occupa l'intera larghezza della viewport */
+  height: auto; /* Altezza automatica proporzionale alla larghezza */
+  display: block; /* Evita il margin collapsing */
+  margin-top: 50px; /* Aggiungi un margine superiore per spostare l'immagine verso il basso */
+}
+ 
+ 
+/* Stile per il testo */
+.trova {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 19px;
+  color: rgb(255, 251, 251);
+  text-align: center; /* Centra il testo */
+  margin-top: -300px;
+}
+ 
+ 
+.scelta {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 15px;
+  color: #ffffff; /* Colore del testo */
+  text-align: justify; /* Allineamento del testo a giustificato */
+  margin-top: 20px; /* Spazio superiore */
+  padding: 20px; /* Spazio interno */
+  text-align: center; /* Centra il testo */
+}
+ 
+.scuola {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 15px;
+  color: #ffffff; /* Colore del testo */
+  text-align: justify; /* Allineamento del testo a giustificato */
+  margin-top: -10px; /* Aumenta lo spazio superiore per spostare il testo più in alto */
+  text-align: center; /* Centra il testo */
+}
+ 
+.cercando {
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 100;
+  font-style: normal;
+  font-size: 15px;
+  color: #ffffff; /* Colore del testo */
+  text-align: justify; /* Allineamento del testo a giustificato */
+  margin-top: 40px; /* Spazio superiore */
+  text-align: center; /* Centra il testo */
+}
+ 
+ 
+ 
+.itsincom {
+  width: 200px; /* Dimensione ridotta dell'immagine */
+  height: auto; /* Mantiene il rapporto d'aspetto dell'immagine */
+  object-fit: contain; /* Garantisce che l'immagine si adatti senza sgranarsi */
+  transition: transform 0.3s ease; /* Aggiunge una transizione per un effetto visivo morbido durante il ridimensionamento */
+  margin-left: 600px;
+    margin-top: 50px;
+}
+ 
+.imageContainer:hover .itsincom {
+  transform: scale(1.1); /* Ingrandisce l'immagine quando si passa sopra con il mouse */
+}
+ 
+/* Media Queries per la versione responsive */
+@media (max-width: 1200px) {
+  .strettamano {
+    margin-left: 100px; /* Adatta la posizione per schermi più piccoli */
   }
+ 
+  .offerta,
+  .futuro,
+  .consulta {
+    margin-right: 50px; /* Adatta la posizione per schermi più piccoli */
+  }
+ 
+  .programmazione {
+    margin-right: 150px; /* Adatta la posizione per schermi più piccoli */
+  }
+}
+ 
+@media (max-width: 768px) {
+  .title {
+    font-size: 1.5em; /* Riduci la dimensione del titolo per schermi più piccoli */
+  }
+ 
+  .text,
+  .h2,
+  .h3,
+  .h4,
+  .comunicazione,
+  .collaboriamo,
+  .offrirti,
+  .offerta,
+  .futuro,
+  .consulta,
+  .programmazione {
+    font-size: 1em; /* Riduci la dimensione del testo per schermi più piccoli */
+    margin-right: 20px; /* Adatta il margine per schermi più piccoli */
+    margin-top: 10px; /* Adatta il margine per schermi più piccoli */
+  }
+ 
+  .immagine4,
+  .strettamano {
+    width: 100%; /* Rendi le immagini larghe quanto lo schermo per schermi più piccoli */
+    margin-left: 0; /* Rimuovi il margine sinistro per schermi più piccoli */
+    margin-top: 20px; /* Adatta il margine per schermi più piccoli */
+  }
+ 
+  .image {
+    margin-top: 10rem; /* Adatta la posizione per schermi più piccoli */
+  }
+}
+ 
+@media (max-width: 480px) {
+  .title {
+    font-size: 1.2em; /* Riduci ulteriormente la dimensione del titolo per schermi molto piccoli */
+  }
+ 
+  .text,
+  .h2,
+  .h3,
+  .h4,
+  .comunicazione,
+  .collaboriamo,
+  .offrirti,
+  .offerta,
+  .futuro,
+  .consulta,
+  .programmazione {
+    font-size: 0.9em; /* Riduci ulteriormente la dimensione del testo per schermi molto piccoli */
+    margin-right: 10px; /* Adatta il margine per schermi molto piccoli */
+    margin-top: 5px; /* Adatta il margine per schermi molto piccoli */
+  }
+ 
+  .immagine4,
+  .strettamano {
+    width: 100%; /* Rendi le immagini larghe quanto lo schermo per schermi molto piccoli */
+    margin-left: 0; /* Rimuovi il margine sinistro per schermi molto piccoli */
+    margin-top: 10px; /* Adatta il margine per schermi molto piccoli */
+  }
+ 
+  .image {
+    margin-top: 5rem; /* Adatta la posizione per schermi molto piccoli */
+  }
+}
+ 
+/* Stile per la classe .areaprogrammazione1 nei dispositivi mobili */
+@media (max-width: 768px) {
+  .areaprogrammazione1 {
+    margin-right: 0; /* Resetta il margine destro */
+    margin-top: 20px; /* Aggiusta il margine superiore */
+    text-align: center; /* Centra il testo */
+  }
+}
+ 
+/* Stile per la classe .areacomunicazione nei dispositivi mobili */
+@media (max-width: 768px) {
+  .areacomunicazione {
+    margin-right: 0; /* Resetta il margine destro */
+    margin-top: 20px; /* Aggiusta il margine superiore */
+    text-align: center; /* Centra il testo */
+  }
+}
+ 
+/* Stile per la classe .strettamano nei dispositivi mobili */
+@media (max-width: 768px) {
+  .strettamano {
+    margin-left: auto; /* Resetta il margine sinistro */
+    margin-right: auto; /* Resetta il margine destro */
+    margin-top: 20px; /* Aggiusta il margine superiore */
+  }
+}
+ 
+/* Stile per la classe .image nei dispositivi mobili */
+@media (max-width: 768px) {
+  .image {
+    margin-top: 10rem; /* Riduci lo spazio superiore */
+  }
+}
+ 
+/* Stile per la classe .cardCountainer nei dispositivi mobili */
+@media (max-width: 768px) {
+  .cardCountainer {
+    grid-template-columns: repeat(1, minmax(300px, 1fr)); /* Cambia il layout delle card in una colonna */
+    padding: 0 20px; /* Riduci il padding ai lati */
+  }
+}
+ 
+/* Stile per la classe .title1 nei dispositivi mobili */
+@media (max-width: 768px) {
+  .title1 {
+    margin-left: auto; /* Resetta il margine sinistro */
+    margin-right: auto; /* Resetta il margine destro */
+    margin-top: 20px; /* Aggiusta il margine superiore */
+    text-align: center; /* Centra il testo */
+  }
+}
+ 
+/* Stile per la classe .trova nei dispositivi mobili */
+@media (max-width: 768px) {
+  .trova {
+    margin-top: 20px; /* Aggiusta il margine superiore */
+  }
+}
+ 
+/* Stile per la classe .scelta nei dispositivi mobili */
+@media (max-width: 768px) {
+  .scelta {
+    margin-top: 10px; /* Aggiusta il margine superiore */
+  }
+}
+ 
+/* Stile per la classe .scuola nei dispositivi mobili */
+@media (max-width: 768px) {
+  .scuola {
+    margin-top: 0; /* Resetta il margine superiore */
+  }
+}
+ 
+/* Stile per la classe .cercando nei dispositivi mobili */
+@media (max-width: 768px) {
+  .cercando {
+    margin-top: 20px; /* Aggiusta il margine superiore */
+  }
+}
+ 
+/* Stile per la classe .itsincom nei dispositivi mobili */
+@media (max-width: 768px) {
+  .itsincom {
+    margin-left: auto; /* Resetta il margine sinistro */
+    margin-right: auto; /* Resetta il margine destro */
+    margin-top: 20px; /* Aggiusta il margine superiore */
+  }
+}

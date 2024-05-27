@@ -70,6 +70,7 @@ export default function LoginPage() {
                                     <input className={styles.input} type="password" id="password" placeholder='Inserisci la password...' required />
                                 </label>
                                 <button className={styles.button} onClick={handleLogin} type="submit">Login</button>
+                                <Link href={'/amministratore'}><button>amministratore</button></Link>
                             </form>
                         </div>
                     </div>

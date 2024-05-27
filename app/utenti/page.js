@@ -48,6 +48,7 @@ export default function Utenti() {
             <h1 className={styles.h1}>Utenti Registrati</h1>
             <div className={styles.container}>
                 <div className={styles.card}>
+                    <div className={styles.overflow}>
                     <table className={styles.table}>
                         <thead>
                             <tr>
@@ -74,6 +75,7 @@ export default function Utenti() {
                             ))}
                         </tbody>
                     </table>
+                    </div>
                 </div>
             </div>
             <Footer />
