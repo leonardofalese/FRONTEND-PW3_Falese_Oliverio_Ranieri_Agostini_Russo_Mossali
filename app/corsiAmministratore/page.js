@@ -102,9 +102,30 @@ export default function Corsi() {
         setCorsi(newCorsi);
     };
 
+    const removeCourse = async (id) => {
+        const confirmDelete = window.confirm('Sei sicuro di voler rimuovere questo corso?');
+        if (confirmDelete) {
+            try {
+                const response = await fetch(`http://localhost:8080/courses/${id}`, {
+                    method: 'DELETE',
+                    credentials: 'include',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                });
 
-    const removeCourse = (id) => {
-        console.log(`Rimuovi corso con ID: ${id}`);
+                if (response.ok) {
+                    console.log(`Corso con ID: ${id} rimosso con successo`);
+                    // Rimuovi il corso dall'array corsi nello stato
+                    setCorsi(corsi.filter(corso => corso.idCourse !== id));
+                } else {
+                    const errorMessage = await response.text();
+                    console.log('Errore durante la rimozione del corso:', response.status, errorMessage);
+                }
+            } catch (error) {
+                console.log('Errore:', error);
+            }
+        }
     };
 
     return (
