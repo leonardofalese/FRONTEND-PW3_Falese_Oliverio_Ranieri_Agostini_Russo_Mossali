@@ -1,9 +1,9 @@
 'use client'
 
-import Header from '@/app/amministratore/components/header';
-import Footer from '@/components/footer';
+import Header from '@/app/amministratore/components/header'
+import Footer from '@/components/footer'
 
-import Link from 'next/link';
+import Link from 'next/link'
 
 import styles from './page.module.css'
 
@@ -15,9 +15,9 @@ export default function Dashboard() {
         <div className={styles.sidebar}>
           <h2>Dashboard</h2>
           <ul>
-            <li><Link href="@/components/dashboardProfile.js">Profile</Link></li>
-            <li><Link href="@/components/dashboardNotifications.js">Notifications</Link></li>
-            <li><Link href="@/components/dashboardCalendar.js">Calendar</Link></li>
+            <li><Link href='/profile'>Profile</Link></li>
+            <li><Link href="">Notifications</Link></li>
+            <li><Link href="">Calendar</Link></li>
           </ul>
         </div>
 
