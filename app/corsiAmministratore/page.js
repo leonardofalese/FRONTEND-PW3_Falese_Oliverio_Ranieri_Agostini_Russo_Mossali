@@ -86,6 +86,7 @@ export default function Corsi() {
             console.log('Errore:', error);
         }
     };
+
     const handleInputChange = (index, field, value) => {
         // Crea una nuova copia dell'array corsi
         const newCorsi = [...corsi];
