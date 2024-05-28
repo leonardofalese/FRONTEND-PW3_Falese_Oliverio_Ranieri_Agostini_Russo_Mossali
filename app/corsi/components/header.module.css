@@ -1,0 +1,73 @@
+.header {
+    background-color: #d7d7d7;
+    color: #333;
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-left: 5rem;
+    margin-right: 5rem;
+
+}
+
+.nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    font-size: 1.25rem;
+}
+
+.logo img {
+    width: 12rem;
+    height: 6rem;
+    object-fit: contain;
+    filter: drop-shadow(0 0 1rem rgba(30, 210, 240, 0.999));
+}
+
+.link {
+    text-decoration: none;
+}
+
+.registerButton {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+    color: #fff;
+    background-color: #0070f3;
+    border: none;
+    border-radius: 0.5rem;
+    text-align: center;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: background-color 0.3s;
+    cursor: pointer;
+}
+
+.registerButton:hover {
+    background: #005bb5;
+    transform: scale(1.05);
+}
+
+.registerButton:active {
+    transform: scale(1);
+}
+
+@media (max-width: 700px) {
+    .registerButton {
+        font-size: 0.9rem;
+        padding: 0.6rem 1rem;
+    }
+
+    .container {
+        flex-direction: column;
+        padding: 1rem;
+    }
+}

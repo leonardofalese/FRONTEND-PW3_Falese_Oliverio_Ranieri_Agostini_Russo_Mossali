@@ -8,9 +8,9 @@
 
 .h1 {
     font-size: 2.5rem;
-    color: #333;
     margin: 20px 0;
     text-align: center;
+    color: #56607d;
 }
 
 .h2 {
@@ -129,8 +129,10 @@
 }
 
 .boxCategory {
-    border: #333 3px solid;
-    border-radius: 15px;
-    margin: 50px;
-    background: radial-gradient(circle, #f5f7fa 0%, #c3cfe2 100%)
+    background: #f9f9f9;
+    border-radius: 10px;
+    border: rgb(214, 214, 214);
+    box-shadow: 10px 5px 5px 10px rgb(214, 214, 214, 1);
+    padding: 1.5rem;
+    margin: 2rem 2rem 2rem 2rem;
 }
