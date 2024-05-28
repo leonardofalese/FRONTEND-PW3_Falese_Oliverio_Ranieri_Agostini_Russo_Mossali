@@ -53,6 +53,7 @@ export default function LoginPage() {
                 console.log(response);
                 const errorMessage = await response.text();
                 console.log('Login failed', response.status, errorMessage);
+                alert('Username o password errati');
             }
         } catch (error) {
             console.log('Error:', error);
@@ -84,7 +85,7 @@ export default function LoginPage() {
                                 <input className={styles.input} type="password" id="password"
                                        placeholder='Inserisci la password...' required/>
                             </label>
-                            <button className={styles.button} onClick={handleLogin} type="submit">Login</button>
+                            <button className={styles.button} type="submit">Login</button>
                             <Link href={'/amministratore'}>
                                 <button>amministratore</button>
                             </Link>

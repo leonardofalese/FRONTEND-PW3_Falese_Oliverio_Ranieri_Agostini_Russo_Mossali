@@ -31,13 +31,6 @@ export default function Register() {
                 },
                 body: JSON.stringify({ name: firstName, surname: lastName, email, password }),
             });
-
-            if (response.ok) {
-                console.log('Login succesful', data);
-                window.location.href = '/amministratore';
-            } else {
-                console.log('Login failed', response.statusText);
-            }
         } catch (error) {
             console.log('Error:', error);
         }
