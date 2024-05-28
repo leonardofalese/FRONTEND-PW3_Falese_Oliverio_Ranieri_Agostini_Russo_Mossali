@@ -9,7 +9,7 @@ export default function Footer() {
                 <div className={styles.footerContent}>
                     <div className={styles.footerSection}>
                         <h2 className={styles.h2}>Chi Siamo</h2>
-                        <p className={styles.p}>ITS Incom si dedica a offrire alta qualità educativa e lavorariva. Unisciti a noi per iniziare a costruire il tuo futuro.</p>
+                        <p className={styles.p}>ITS Incom si dedica a offrire alta qualità educativa e lavorativa. Unisciti a noi per iniziare a costruire il tuo futuro.</p>
                     </div>
                     <div className={styles.footerSection}>
                         <h2 className={styles.h2}>Naviga</h2>

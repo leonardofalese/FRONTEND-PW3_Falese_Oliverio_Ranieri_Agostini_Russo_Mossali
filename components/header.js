@@ -12,7 +12,7 @@ export default function Header() {
             <div className={styles.container}>
                 <div className={styles.altroNav}>
                     <Link className={styles.logo} href="/">
-                        <Image src={logoImg} alt="ITS Incom" priority/>
+                        <Image src={logoImg} alt="ITS Incom" priority />
                     </Link>
                     <li><NavLink href="/corsi">Corsi</NavLink></li>
                 </div>

@@ -1,11 +1,16 @@
 'use client'
-import {useEffect, useState} from "react"
-import {useRouter} from 'next/navigation'
-import Header from '@/app/amministratore/components/header';
+
+import { useEffect, useState } from "react"
+import { useRouter } from 'next/navigation'
+
+import Header from '@/app/amministratore/components/header'
 import Footer from '@/components/footer'
+
+import Image from "next/image"
+
+import plus from "@/public/images/plus.jpeg"
+
 import styles from './page.module.css'
-import plus from "@/public/images/plus.jpeg";
-import Image from "next/image";
 
 export default function Utenti() {
     const router = useRouter();
@@ -34,7 +39,7 @@ export default function Utenti() {
                         if (courseResponse.ok) {
                             const courseData = await courseResponse.json();
                             const courseName = courseData.name;
-                            return {...utente, courseName};
+                            return { ...utente, courseName };
                         } else {
                             console.log('Errore durante il fetch del corso associato all\'utente:', courseResponse.status);
                             return utente;
@@ -78,7 +83,6 @@ export default function Utenti() {
 
                 if (response.ok) {
                     console.log(`Utente con ID: ${id} rimosso con successo`);
-                    // Rimuovi l'utente dall'array utenti nello stato
                     setUtenti(utenti.filter(utente => utente.id !== id));
                 } else {
                     const errorMessage = await response.text();
@@ -92,54 +96,56 @@ export default function Utenti() {
 
     return (
         <div>
-            <Header/>
+            <Header />
             <h1 className={styles.h1}>Utenti Registrati</h1>
-            <button onClick={toggleEditColumn} className={styles.button1}>
-                {showEditColumn ? 'Nascondi Modifica' : 'Mostra Modifica'}
-            </button>
+            <div className={styles.modify}>
+                <button onClick={toggleEditColumn} className={styles.button1}>
+                    {showEditColumn ? 'Nascondi Modifica' : 'Mostra Modifica'}
+                </button>
+            </div>
             <div className={styles.container}>
                 <div className={styles.card}>
                     <div className={styles.overflow}>
                         <table className={styles.table}>
                             <thead>
-                            <tr>
-                                <th className={styles.th}>ID</th>
-                                <th className={styles.th}>Nome</th>
-                                <th className={styles.th}>Cognome</th>
-                                <th className={styles.th}>Email</th>
-                                <th className={styles.th}>Ruolo</th>
-                                <th className={styles.th}>Stato</th>
-                                <th className={styles.th}>Corso Selezionato</th>
-                                {showEditColumn && <th className={styles.th}>Modifica</th>}
-                            </tr>
+                                <tr>
+                                    <th className={styles.th}>ID</th>
+                                    <th className={styles.th}>Nome</th>
+                                    <th className={styles.th}>Cognome</th>
+                                    <th className={styles.th}>Email</th>
+                                    <th className={styles.th}>Ruolo</th>
+                                    <th className={styles.th}>Stato</th>
+                                    <th className={styles.th}>Corso Selezionato</th>
+                                    {showEditColumn && <th className={styles.th}>Modifica</th>}
+                                </tr>
                             </thead>
                             <tbody>
-                            {utenti.map((utente) => (
-                                <tr key={utente.id} className={styles.tr}>
-                                    <td className={styles.td}>{utente.id}</td>
-                                    <td className={styles.td}>{utente.name}</td>
-                                    <td className={styles.td}>{utente.surname}</td>
-                                    <td className={styles.td}>{utente.email}</td>
-                                    <td className={styles.td}>{utente.role}</td>
-                                    <td className={styles.td}>{utente.state}</td>
-                                    <td className={styles.td}>{utente.courseName}</td>
-                                    {showEditColumn && (
-                                        <td className={styles.td}>
-                                            <button onClick={() => removeUser(utente.id)}
+                                {utenti.map((utente) => (
+                                    <tr key={utente.id} className={styles.tr}>
+                                        <td className={styles.td}>{utente.id}</td>
+                                        <td className={styles.td}>{utente.name}</td>
+                                        <td className={styles.td}>{utente.surname}</td>
+                                        <td className={styles.td}>{utente.email}</td>
+                                        <td className={styles.td}>{utente.role}</td>
+                                        <td className={styles.td}>{utente.state}</td>
+                                        <td className={styles.td}>{utente.courseName}</td>
+                                        {showEditColumn && (
+                                            <td className={styles.td}>
+                                                <button onClick={() => removeUser(utente.id)}
                                                     className={styles.editButton}>
-                                                <Image src={plus} alt="plus" width={20} height={20}
-                                                       className={styles.img}/>Rimuovi
-                                            </button>
-                                        </td>
-                                    )}
-                                </tr>
-                            ))}
+                                                    <Image src={plus} alt="plus" width={20} height={20}
+                                                        className={styles.img} />Rimuovi
+                                                </button>
+                                            </td>
+                                        )}
+                                    </tr>
+                                ))}
                             </tbody>
                         </table>
                     </div>
                 </div>
             </div>
-            <Footer/>
+            <Footer />
         </div>
     );
 }

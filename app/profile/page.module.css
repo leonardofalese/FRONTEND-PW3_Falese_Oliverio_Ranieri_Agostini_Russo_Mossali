@@ -1,76 +1,107 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.h2 {
+  font-size: 2.1rem;
+  text-align: center;
+  text-transform: uppercase;
+  color: #56607d;
+  margin: 1rem;
+}
+
 .content {
-    max-width: 800px;
-    margin: 50px auto;
-    padding: 30px;
-    border: 1px solid #dcdcdc;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    background-color: #f9f9f9;
+  width: 70%;
+  background: rgb(255, 255, 255);
+  border-radius: 10px;
+  border: rgb(214, 214, 214);
+  box-shadow: 10px 5px 5px 10px rgb(214, 214, 214, 1);
+  padding: 2rem;
+  margin: 2rem;
+  transition: 0.5s;
+}
+
+.title {
+  margin-bottom: 30px;
+  font-size: 24px;
+  color: #333;
+  animation: fade-in 0.5s ease;
+}
+
+.profileInfo {
+  display: grid;
+  gap: 20px;
+}
+
+.profileField {
+  display: flex;
+  align-items: center;
+  animation: fade-in 0.5s ease;
+}
+
+.profileField label {
+  flex: 0 0 150px;
+  font-weight: bold;
+  color: #555;
+  animation: fade-in 0.5s ease;
+}
+
+.profileField span {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+  flex: 1;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  color: #444;
+  animation: fade-in 0.5s ease;
+}
+
+.saveButton {
+  margin-top: 30px;
+  background-color: #0070f3;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 12px 24px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  animation: fade-in 0.5s ease;
+}
+
+.saveButton:hover {
+  background-color: #005bb5;
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
   }
-   
-  .title {
-    margin-bottom: 30px;
-    font-size: 24px;
-    color: #333;
-    animation: fade-in 0.5s ease;
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
-   
-  .profileInfo {
-    display: grid;
-    gap: 20px;
+}
+
+@media (max-width: 850px) {
+  .h2 {
+    margin-top: 4rem;
   }
-   
-  .profileField {
-    display: flex;
-    align-items: center;
-    animation: fade-in 0.5s ease;
+}
+
+@media (max-width: 450px) {
+  .h2 {
+    font-size: 1.5rem;
   }
-   
-  .profileField label {
-    flex: 0 0 150px;
-    font-weight: bold;
-    color: #555;
-    animation: fade-in 0.5s ease;
+
+  .content {
+    width: 90%;
   }
-   
-  .profileField span {
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    font-size: 16px;
-    flex: 1;
-    overflow: hidden;
-    white-space: nowrap;
-    text-overflow: ellipsis;
-    color: #444;
-    animation: fade-in 0.5s ease;
-  }
-   
-  .saveButton {
-    margin-top: 30px;
-    background-color: #0070f3;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    padding: 12px 24px;
-    font-size: 16px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-    animation: fade-in 0.5s ease;
-  }
-   
-  .saveButton:hover {
-    background-color: #005bb5;
-  }
-   
-  /* Animazioni */
-  @keyframes fade-in {
-    from {
-      opacity: 0;
-      transform: translateY(-20px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
+}

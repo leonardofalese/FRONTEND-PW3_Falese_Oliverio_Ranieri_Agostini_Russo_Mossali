@@ -1,9 +1,11 @@
 'use client'
 
 import Link from 'next/link'
-import styles from './page.module.css';
-import Header from '@/app/login/components/header';
-import Footer from '@/components/footer';
+
+import Header from '@/app/login/components/header'
+import Footer from '@/components/footer'
+
+import styles from './page.module.css'
 
 export default function LoginPage() {
     const handleLogin = async (e) => {
@@ -28,7 +30,7 @@ export default function LoginPage() {
                 headers: {
                     'Content-Type': 'application/json',
                 },
-                body: JSON.stringify({email, password}),
+                body: JSON.stringify({ email, password }),
             });
 
             console.log('Response:', response);
@@ -63,47 +65,45 @@ export default function LoginPage() {
 
     return (
         <body>
-        <Header/>
-        <main className={styles.main}>
-            <section className={styles.section}>
-                <div className={styles.container}>
-                    <h1 className={styles.h1}>Non hai un Account? Effettua la Registrazione</h1>
-                    <Link className={styles.link} href={'/register'}>
-                        <button className={styles.button} type="submit">Registrati</button>
-                    </Link>
-                    <hr className={styles.hr}></hr>
-                    <div id="form-container">
-                        <h1 className={styles.h1}>Login</h1>
-                        <form onSubmit={handleLogin} className={styles.form}>
-                            <label className={styles.label}>
-                                Email:
-                                <input className={styles.input} type="email" id="email"
-                                       placeholder="Inserisci l'email..." required/>
-                            </label>
-                            <label className={styles.label}>
-                                Password:
-                                <input className={styles.input} type="password" id="password"
-                                       placeholder='Inserisci la password...' required/>
-                            </label>
-                            <button className={styles.button} type="submit">Login</button>
-                            <Link href={'/amministratore'}>
-                                <button>amministratore</button>
-                            </Link>
-                            <Link href={'/studente'}>
-                                <button>utente</button>
-                            </Link>
-                        </form>
+            <Header />
+            <main className={styles.main}>
+                <section className={styles.section}>
+                    <div className={styles.container}>
+                        <h1 className={styles.h1}>Non hai un Account? Effettua la Registrazione</h1>
+                        <Link className={styles.link} href={'/register'}>
+                            <button className={styles.button} type="submit">Registrati</button>
+                        </Link>
+                        <hr className={styles.hr}></hr>
+                        <div id="form-container">
+                            <h1 className={styles.h1}>Login</h1>
+                            <form onSubmit={handleLogin} className={styles.form}>
+                                <div className={styles.div}>
+                                    <label className={styles.label}>Email</label>
+                                    <input className={styles.input} type="email" id="email" placeholder="Inserisci l'email..." required />
+                                </div>
+                                <div className={styles.div}>
+                                    <label className={styles.label}>Password</label>
+                                    <input className={styles.input} type="password" id="password" placeholder='Inserisci la password...' required />
+                                </div>
+                                <button className={styles.button} type="submit">Login</button>
+                                <Link href={'/amministratore'}>
+                                    <button>amministratore</button>
+                                </Link>
+                                <Link href={'/studente'}>
+                                    <button>utente</button>
+                                </Link>
+                            </form>
+                        </div>
                     </div>
-                </div>
-                <div className={styles.paragrafo}>
-                    <p className={styles.p}>Bentornato in ITS Incom! Accedi al tuo account per iniziare o continuare il
-                        tuo percorso di apprendimento. Qui troverai tutti i tuoi corsi, risorse e strumenti necessari
-                        per raggiungere i tuoi obiettivi. Non vediamo l'ora di aiutarti a crescere e a sviluppare le tue
-                        competenze. Inserisci le tue credenziali!</p>
-                </div>
-            </section>
-        </main>
-        <Footer/>
+                    <div className={styles.paragrafo}>
+                        <p className={styles.p}>Bentornato in ITS Incom! Accedi al tuo account per iniziare o continuare il
+                            tuo percorso di apprendimento. Qui troverai tutti i tuoi corsi, risorse e strumenti necessari
+                            per raggiungere i tuoi obiettivi. Non vediamo l'ora di aiutarti a crescere e a sviluppare le tue
+                            competenze. Inserisci le tue credenziali!</p>
+                    </div>
+                </section>
+            </main>
+            <Footer />
         </body>
     );
 }

@@ -1,20 +1,23 @@
 'use client'
 
-import Header from '@/app/dashboard/components/header';
-import Footer from '@/components/footer';
+import Header from '@/app/dashboard/components/header'
+import Footer from '@/components/footer'
+
 import Link from 'next/link'
 import Image from 'next/image'
+
 import profilo from '@/public/images/profilo.jpeg'
 import notifiche from '@/public/images/notifiche.jpeg'
 import calendario from '@/public/images/calendario.jpeg'
-import styles from './page.module.css';
+
+import styles from './page.module.css'
 
 export default function Dashboard() {
   return (
     <body>
       <Header />
       <div className={styles.container}>
-        <h2 className={styles.h2}>Dashboard</h2>
+        <h2 className={styles.h2}>Area Personale</h2>
         <div className={styles.content}>
           <div className={styles.card}>
             <div className={styles.logo}>

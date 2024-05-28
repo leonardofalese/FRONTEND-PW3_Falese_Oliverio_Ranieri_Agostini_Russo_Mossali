@@ -1,19 +1,19 @@
 'use client'
- 
-import { useEffect, useState } from 'react';
-import Header from '@/app/dashboard/components/header';
-import Footer from '@/components/footer';
-import styles from './page.module.css';
-import { motion } from 'framer-motion'; // Importa Framer Motion per le animazioni
- 
-const Notifications = () => {
+
+import { useEffect, useState } from 'react'
+
+import Header from '@/app/profile/components/header'
+import Footer from '@/components/footer'
+
+import { motion } from 'framer-motion'
+
+import styles from './page.module.css'
+
+export default function Notifications() {
   const [notifications, setNotifications] = useState([]);
- 
+
   useEffect(() => {
-    // Simulazione di caricamento delle notifiche
     const fetchNotifications = () => {
-      // Qui potresti recuperare le notifiche da un'API
-      // Per ora usiamo delle notifiche di esempio
       const exampleNotifications = [
         {
           id: 1,
@@ -30,34 +30,34 @@ const Notifications = () => {
       ];
       setNotifications(exampleNotifications);
     };
- 
+
     fetchNotifications();
   }, []);
- 
+
   return (
-    <div>
+    <body>
       <Header />
-      <div className={styles.content}>
-        <h2>Notifications Page</h2>
-        {notifications.map(notification => (
-          <motion.div
-            key={notification.id}
-            className={styles.notification}
-            initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.3, delay: 0.1 }}
-          >
-            <div className={styles.notificationHeader}>
-              <h3>{notification.title}</h3>
-              <span>{notification.timestamp}</span>
-            </div>
-            <p>{notification.content}</p>
-          </motion.div>
-        ))}
+      <div className={styles.container}>
+        <h2 className={styles.h2}>Notifiche</h2>
+        <div className={styles.content}>
+          {notifications.map(notification => (
+            <motion.div
+              key={notification.id}
+              className={styles.notification}
+              initial={{ opacity: 0, y: -20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.3, delay: 0.1 }}
+            >
+              <div className={styles.notificationHeader}>
+                <h3>{notification.title}</h3>
+                <span>{notification.timestamp}</span>
+              </div>
+              <p>{notification.content}</p>
+            </motion.div>
+          ))}
+        </div>
       </div>
       <Footer />
-    </div>
+    </body>
   );
 };
- 
-export default Notifications;

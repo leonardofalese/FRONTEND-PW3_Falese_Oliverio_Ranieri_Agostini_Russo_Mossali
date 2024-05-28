@@ -1,11 +1,15 @@
-'use client';
+'use client'
 
-import {useEffect, useState} from 'react';
-import Image from 'next/image';
-import Header from '@/app/amministratore/components/header';
-import Footer from '@/components/footer';
-import styles from './page.module.css';
-import plus from '@/public/images/plus.jpeg';
+import { useEffect, useState } from 'react'
+
+import Image from 'next/image'
+
+import Header from '@/app/amministratore/components/header'
+import Footer from '@/components/footer'
+
+import plus from '@/public/images/plus.jpeg'
+
+import styles from './page.module.css'
 
 export default function Corsi() {
     const [corsi, setCorsi] = useState([]);
@@ -52,13 +56,12 @@ export default function Corsi() {
     };
 
     const addLine = () => {
-        setCorsi([...corsi, {idCourse: 'new'}]);
+        setCorsi([...corsi, { idCourse: 'new' }]);
         setIsAdding(true);
     }
 
     const addCourse = async (corso) => {
         try {
-            // Crea un nuovo oggetto corso senza idCourse
             const newCorso = {
                 name: corso.name,
                 category: corso.category,
@@ -70,14 +73,14 @@ export default function Corsi() {
                 headers: {
                     'Content-Type': 'application/json',
                 },
-                body: JSON.stringify(newCorso), // Invia i dati del corso al server
+                body: JSON.stringify(newCorso),
             });
 
             if (response.ok) {
                 console.log('Nuovo corso aggiunto con successo');
                 setIsAdding(false);
-                alert('Corso salvato con successo!'); // Mostra un alert di conferma
-                location.reload(); // Ricarica la pagina
+                alert('Corso salvato con successo!');
+                location.reload();
             } else {
                 const errorMessage = await response.text();
                 console.log('Errore durante l\'aggiunta del corso:', response.status, errorMessage);
@@ -88,18 +91,14 @@ export default function Corsi() {
     };
 
     const handleInputChange = (index, field, value) => {
-        // Crea una nuova copia dell'array corsi
         const newCorsi = [...corsi];
 
-        // Se il corso non esiste ancora, crealo
         if (!newCorsi[index]) {
-            newCorsi[index] = {idCourse: 'new'};
+            newCorsi[index] = { idCourse: 'new' };
         }
 
-        // Aggiorna il campo corrispondente del corso
         newCorsi[index][field] = value;
 
-        // Aggiorna lo stato con l'array copiato
         setCorsi(newCorsi);
     };
 
@@ -117,7 +116,6 @@ export default function Corsi() {
 
                 if (response.ok) {
                     console.log(`Corso con ID: ${id} rimosso con successo`);
-                    // Rimuovi il corso dall'array corsi nello stato
                     setCorsi(corsi.filter(corso => corso.idCourse !== id));
                 } else {
                     const errorMessage = await response.text();
@@ -131,75 +129,75 @@ export default function Corsi() {
 
     return (
         <div>
-            <Header/>
+            <Header />
             <h1 className={styles.h1}>Corsi disponibili</h1>
             <div className={styles.modify}>
-            <button onClick={toggleEditColumn} className={styles.button1}>
-                {showEditColumn ? 'Nascondi Modifica' : 'Mostra Modifica'}
-            </button>
-            {showEditColumn && (
-                isAdding ? (
-                    <button onClick={() => addCourse(corsi.find(corso => corso.idCourse === 'new'))}
+                <button onClick={toggleEditColumn} className={styles.button1}>
+                    {showEditColumn ? 'Nascondi Modifica' : 'Mostra Modifica'}
+                </button>
+                {showEditColumn && (
+                    isAdding ? (
+                        <button onClick={() => addCourse(corsi.find(corso => corso.idCourse === 'new'))}
                             className={styles.button1}>
-                        Salva
-                    </button>
-                ) : (
-                    <button onClick={addLine} className={styles.button1}>
-                        Aggiungi
-                    </button>
-                )
-            )}
+                            Salva
+                        </button>
+                    ) : (
+                        <button onClick={addLine} className={styles.button1}>
+                            Aggiungi
+                        </button>
+                    )
+                )}
             </div>
             <div className={styles.container}>
                 <div className={styles.card}>
                     <table className={styles.table}>
                         <thead>
-                        <tr>
-                            <th className={styles.th}>Nome</th>
-                            <th className={styles.th}>Categoria</th>
-                            {showEditColumn && <th className={styles.th}>Modifica</th>}
-                        </tr>
+                            <tr>
+                                <th className={styles.th}>Nome</th>
+                                <th className={styles.th}>Categoria</th>
+                                {showEditColumn && <th className={styles.th}>Modifica</th>}
+                            </tr>
                         </thead>
                         <tbody>
-                        {corsi.length > 0 && corsi.map((corso, index) => (
-                            <tr key={corso.idCourse || 'new'} className={styles.tr}>
-                                <td className={styles.td}>
-                                    {corso.idCourse === 'new' ? (
-                                        <input className={styles.input} type="text" value={corso.name || ''}
-                                               onChange={(e) => handleInputChange(index, 'name', e.target.value)}/>
-                                    ) : (
-                                        corso.name || ''
-                                    )}
-                                </td>
-                                <td className={styles.td}>
-                                    {corso.idCourse === 'new' ? (
-                                        <select className={styles.option} value={corso.category || ''}
-                                                onChange={(e) => handleInputChange(index, 'category', e.target.value)}>
-                                            <option value="">Seleziona una categoria</option>
-                                            {categories.map((category) => (
-                                                <option key={category} value={category}>{category}</option>
-                                            ))}
-                                        </select>
-                                    ) : (
-                                        corso.category || ''
-                                    )}
-                                </td>
-                                {showEditColumn && (
+                            {corsi.length > 0 && corsi.map((corso, index) => (
+                                <tr key={corso.idCourse || 'new'} className={styles.tr}>
                                     <td className={styles.td}>
-                                        <button onClick={() => removeCourse(corso.idCourse)}
-                                                className={styles.editButton}>
-                                            <Image src={plus} alt="plus" width={20} height={20}
-                                                   className={styles.img}/> Rimuovi
-                                        </button>
+                                        {corso.idCourse === 'new' ? (
+                                            <input className={styles.input} type="text" value={corso.name || ''}
+                                                onChange={(e) => handleInputChange(index, 'name', e.target.value)} />
+                                        ) : (
+                                            corso.name || ''
+                                        )}
                                     </td>
-                                )}
-                            </tr>
-                        ))}
+                                    <td className={styles.td}>
+                                        {corso.idCourse === 'new' ? (
+                                            <select className={styles.option} value={corso.category || ''}
+                                                onChange={(e) => handleInputChange(index, 'category', e.target.value)}>
+                                                <option value="">Seleziona una categoria</option>
+                                                {categories.map((category) => (
+                                                    <option key={category} value={category}>{category}</option>
+                                                ))}
+                                            </select>
+                                        ) : (
+                                            corso.category || ''
+                                        )}
+                                    </td>
+                                    {showEditColumn && (
+                                        <td className={styles.td}>
+                                            <button onClick={() => removeCourse(corso.idCourse)}
+                                                className={styles.editButton}>
+                                                <Image src={plus} alt="plus" width={20} height={20}
+                                                    className={styles.img} /> Rimuovi
+                                            </button>
+                                        </td>
+                                    )}
+                                </tr>
+                            ))}
                         </tbody>
                     </table>
                 </div>
             </div>
-            <Footer/>
+            <Footer />
         </div>
     );
 }

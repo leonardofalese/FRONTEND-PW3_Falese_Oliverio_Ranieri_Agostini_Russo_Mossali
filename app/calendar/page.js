@@ -1,11 +1,14 @@
-'use client';
+'use client'
 
-import { useState } from 'react';
-import Header from '@/app/dashboard/components/header';
-import Footer from '@/components/footer';
-import Calendar from 'react-calendar';
-import 'react-calendar/dist/Calendar.css';
-import styles from './page.module.css';
+import { useState } from 'react'
+
+import Header from '@/app/profile/components/header'
+import Footer from '@/components/footer'
+
+import Calendar from 'react-calendar'
+import 'react-calendar/dist/Calendar.css'
+
+import styles from './page.module.css'
 
 export default function CalendarPage() {
     const [date, setDate] = useState(new Date());
