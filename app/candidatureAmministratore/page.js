@@ -90,6 +90,7 @@ export default function Candidature() {
         setIsEditing(false);
         setEditingCandidate(null);
     };
+
     return (
         <div>
             <Header/>
