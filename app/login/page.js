@@ -1,25 +1,24 @@
 'use client'
-
+ 
 import Link from 'next/link'
-
-import Header from '@/app/login/components/header'
-import Footer from '@/components/footer'
-
-import styles from './page.module.css'
-
+import styles from './page.module.css';
+import Header from '@/app/login/components/header';
+import Footer from '@/components/footer';
+ 
 export default function LoginPage() {
     const handleLogin = async (e) => {
         e.preventDefault();
-
+ 
         const email = document.getElementById("email").value;
         const password = document.getElementById("password").value;
+
 
 
         console.log({
             email,
             password,
         });
-
+ 
         console.log('email:', email);
         console.log('Password:', password);
 
@@ -49,8 +48,8 @@ export default function LoginPage() {
 
 
     };
-
-
+ 
+ 
     return (
         <body>
             <Header />
@@ -73,7 +72,6 @@ export default function LoginPage() {
                                 </label>
                                 <button className={styles.button} onClick={handleLogin} type="submit">Login</button>
                                 <Link href={'/amministratore'}><button>amministratore</button></Link>
-                                <Link href={'/dashboard'}><button>utente</button></Link>
                             </form>
                         </div>
                     </div>
