@@ -132,6 +132,7 @@ export default function Corsi() {
         <div>
             <Header/>
             <h1 className={styles.h1}>Corsi disponibili</h1>
+            <div className={styles.modify}>
             <button onClick={toggleEditColumn} className={styles.button1}>
                 {showEditColumn ? 'Nascondi Modifica' : 'Mostra Modifica'}
             </button>
@@ -147,6 +148,7 @@ export default function Corsi() {
                     </button>
                 )
             )}
+            </div>
             <div className={styles.container}>
                 <div className={styles.card}>
                     <table className={styles.table}>
@@ -162,7 +164,7 @@ export default function Corsi() {
                             <tr key={corso.idCourse || 'new'} className={styles.tr}>
                                 <td className={styles.td}>
                                     {corso.idCourse === 'new' ? (
-                                        <input type="text" value={corso.name || ''}
+                                        <input className={styles.input} type="text" value={corso.name || ''}
                                                onChange={(e) => handleInputChange(index, 'name', e.target.value)}/>
                                     ) : (
                                         corso.name || ''
@@ -170,7 +172,7 @@ export default function Corsi() {
                                 </td>
                                 <td className={styles.td}>
                                     {corso.idCourse === 'new' ? (
-                                        <select value={corso.category || ''}
+                                        <select className={styles.option} value={corso.category || ''}
                                                 onChange={(e) => handleInputChange(index, 'category', e.target.value)}>
                                             <option value="">Seleziona una categoria</option>
                                             {categories.map((category) => (
