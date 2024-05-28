@@ -72,6 +72,7 @@ export default function LoginPage() {
                                 </label>
                                 <button className={styles.button} onClick={handleLogin} type="submit">Login</button>
                                 <Link href={'/amministratore'}><button>amministratore</button></Link>
+                                <Link href={'/studente'}><button>utente</button></Link>
                             </form>
                         </div>
                     </div>
