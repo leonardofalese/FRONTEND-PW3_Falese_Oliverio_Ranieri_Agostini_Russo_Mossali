@@ -1,7 +1,7 @@
 'use client'
  
 import { useEffect, useState } from 'react';
-import Header from '@/app/amministratore/components/header';
+import Header from '@/app/dashboard/components/header';
 import Footer from '@/components/footer';
 import styles from './page.module.css';
 import { motion } from 'framer-motion'; // Importa Framer Motion per le animazioni

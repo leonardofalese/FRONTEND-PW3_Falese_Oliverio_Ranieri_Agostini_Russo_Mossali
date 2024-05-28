@@ -1,5 +1,5 @@
 'use client'
-import Header from '@/app/amministratore/components/header';
+import Header from '@/app/dashboard/components/header';
 import Footer from '@/components/footer';
 import styles from './page.module.css';
  

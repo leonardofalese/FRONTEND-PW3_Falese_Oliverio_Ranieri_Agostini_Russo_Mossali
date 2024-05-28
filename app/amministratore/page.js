@@ -4,6 +4,8 @@ import { useEffect, useState } from 'react';
 import Image from 'next/image';
 import Utente from '@/public/images/Utenti.jpeg';
 import Corsi from '@/public/images/corsi.jpeg';
+import Candidature from '@/public/images/candidature.jpeg';
+import Test from '@/public/images/test.jpeg';
 import Header from '@/app/amministratore/components/header';
 import Footer from '@/components/footer';
 import { useRouter } from 'next/navigation';
@@ -83,12 +85,12 @@ export default function Amministratore() {
                         <div className={styles.button}>
                             <button className={styles.container3}
                                     onClick={() => navigateTo('/candidatureAmministratore')}>Candidature Attive
-                                <Image className={styles.image} src={Corsi} alt='Candidature Attive'/>
+                                <Image className={styles.image} src={Candidature} alt='Candidature Attive'/>
                             </button>
                         </div>
                         <div className={styles.button}>
                             <button className={styles.container3} onClick={() => navigateTo('/testAmministratore')}>Test
-                                <Image className={styles.image} src={Corsi} alt='Test'/>
+                                <Image className={styles.image} src={Test} alt='Test'/>
                             </button>
                         </div>
                     </div>
