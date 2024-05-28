@@ -1,0 +1,146 @@
+.main {
+    min-height: auto;
+}
+
+.section {
+    display: flex;
+}
+
+.hr {
+    margin: 2rem;
+    color: #000000;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    min-width: 450px;
+    padding: 1.5rem;
+    background: rgb(255, 255, 255);
+    border-radius: 10px;
+    border: rgb(214, 214, 214);
+    box-shadow: 10px 5px 5px 10px rgb(214, 214, 214, 1);
+    margin: 2rem;
+}
+
+.h1 {
+    text-align: center;
+    color: #56607d;
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.info {
+    display: flex;
+    flex-direction: column;
+    text-align: flex-start;
+}
+
+.p {
+    padding: 1rem;
+    font-size: 16px;
+    color: #333;
+}
+
+.container2 {
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    width: 100%;
+}
+
+.buttons {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    margin-top: 2rem;
+    gap: 3rem;
+
+}
+
+.image {
+    width: 50%;
+    height: 50%;
+}
+
+.button {
+    box-shadow: 10px 5px 5px 10px rgb(214, 214, 214, 1);
+    border: none;
+    border-radius: 0.5rem;
+    transition: 0.5s;
+    cursor: pointer;
+}
+
+.button:hover {
+    background: #005bb5;
+    transform: scale(1.05);
+    transition: 0.5s;
+}
+
+.button:active {
+    transform: scale(1.1);
+}
+
+.container3 {
+    font-family: 'Montserrat', serif;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-weight: bold;
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+    border: none;
+    border-radius: 0.5rem;
+    text-align: center;
+    text-transform: uppercase;
+    text-decoration: none;
+    cursor: pointer;
+    background-color: #ffffff;
+}
+
+@media (max-width: 1200px) {
+    .buttons {
+        display: flex;
+        flex-direction: column;
+        padding: 2rem;
+    }
+
+}
+
+@media (max-width: 900px) {
+    .container {
+        min-width: 250px;
+    }
+
+    .buttons {
+        padding: 3rem;
+    }
+
+    .h1 {
+        font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 700px) {
+    .buttons {
+        padding: 1.5rem;
+    }
+}
+
+@media (max-width: 600px) {
+    .section {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .container {
+        width: 80%;
+        margin: 3rem auto;
+    }
+}
