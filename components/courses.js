@@ -1,6 +1,7 @@
 // import Link from 'next/link'
 
 import styles from '@/components/courses.module.css'
+import Link from "next/link";
 
 export default function Courses() {
 
@@ -25,7 +26,7 @@ export default function Courses() {
                                 Corso Cloud Developer
                             </li>
                         </ul>
-                        <button className={styles.ctaButton}>Scopri i corsi</button>
+                        <Link href={"/corsi"}><button className={styles.ctaButton}>Scopri i corsi</button></Link>
                     </div>
                     <div className={styles.courseCard}>
                         <h3 className={styles.h3}>Area Nuove Tecnologie</h3>
@@ -46,7 +47,7 @@ export default function Courses() {
                                 Corso Internet of Things
                             </li>
                         </ul>
-                        <button className={styles.ctaButton}>Scopri i corsi</button>
+                        <Link href={"/corsi"}><button className={styles.ctaButton}>Scopri i corsi</button></Link>
                     </div>
                     <div className={styles.courseCard}>
                         <h3 className={styles.h3}>Area Comunicazione</h3>
@@ -64,7 +65,7 @@ export default function Courses() {
                                 Corso Web Designer
                             </li>
                         </ul>
-                        <button className={styles.ctaButton}>Scopri i corsi</button>
+                        <Link href={"/corsi"}><button className={styles.ctaButton}>Scopri i corsi</button></Link>
                     </div>
                 </div>
             </div>

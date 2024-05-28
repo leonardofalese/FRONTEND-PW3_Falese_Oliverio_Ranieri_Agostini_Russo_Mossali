@@ -12,6 +12,17 @@
 
 }
 
+.altroNav{
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.altroNav li{
+    font-size: 1.25rem;
+    list-style: none;
+}
+
 .nav ul {
     list-style: none;
     margin: 0;
