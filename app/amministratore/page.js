@@ -4,7 +4,6 @@ import { useEffect, useState } from 'react';
 import Image from 'next/image';
 import Utente from '@/public/images/Utenti.jpeg';
 import Corsi from '@/public/images/corsi.jpeg';
-import Candidature from "@/app/candidatureAmministratore/page";
 import Header from '@/app/amministratore/components/header';
 import Footer from '@/components/footer';
 import { useRouter } from 'next/navigation';
