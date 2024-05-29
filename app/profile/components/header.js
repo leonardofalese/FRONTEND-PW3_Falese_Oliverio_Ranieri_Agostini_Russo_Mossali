@@ -40,7 +40,7 @@ export default function Header() {
                     <Image src={logoImg} alt="ITS Incom" priority />
                 </Link>
                 <div className={styles.dropdown}>
-                    <Link href={'/dashboard'}><Image className={styles.admin} src={admin} alt="Admin" /></Link>
+                    <Link href={'/studente'}><Image className={styles.admin} src={admin} alt="Admin" /></Link>
                     <div className={styles.dropdownContent}>
                         <Link className={styles.link} href="#">
                             <p className={styles.p} onClick={handleLogout}>Logout</p>
