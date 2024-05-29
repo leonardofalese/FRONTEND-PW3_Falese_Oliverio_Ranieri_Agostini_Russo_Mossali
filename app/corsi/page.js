@@ -34,11 +34,10 @@ export default function Corsi() {
                     if (userData.role === "STUDENT") {
                         const { default: Header } = await import('@/app/profile/components/header');
                         setHeader(() => Header);
-                    } else {
-                        const { default: Header } = await import('@/app/corsi/components/header');
-                        setHeader(() => Header);
                     }
                 } else {
+                    const { default: Header } = await import('@/app/corsi/components/header');
+                    setHeader(() => Header);
                     throw new Error('Errore nella richiesta dei dati utente');
                 }
             } catch (error) {
