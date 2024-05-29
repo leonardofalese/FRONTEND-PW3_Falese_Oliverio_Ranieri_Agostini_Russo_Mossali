@@ -5,7 +5,7 @@ import { useEffect, useState } from 'react'
 import Image from 'next/image'
 
 import Header from '@/app/amministratore/components/header'
-import Footer from '@/components/footer'
+import Footer from '@/app/amministratore/components/footer'
 
 import plus from '@/public/images/plus.jpeg'
 

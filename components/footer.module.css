@@ -22,6 +22,12 @@
   margin-bottom: 1.5rem;
 }
 
+.footerDiv {
+  display: flex;
+  flex-direction: row;
+  width: 50%;
+}
+
 .footerSection {
   flex: 1;
   margin: 1rem;
@@ -71,8 +77,19 @@
 
 @media (max-width: 1200px) {
   .footerContent {
+    display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
     text-align: center;
+    width: 90%;
+  }
+
+  .footerDiv {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
     width: 90%;
   }
 
@@ -82,5 +99,16 @@
 
   .map {
     height: 30rem;
+  }
+}
+
+@media (max-width: 850px) {
+  .footerDiv {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .footerSection {
+    width: 100%;
   }
 }
