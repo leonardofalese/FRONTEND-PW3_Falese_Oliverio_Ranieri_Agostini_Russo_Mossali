@@ -148,7 +148,7 @@ export default function CorsiAmministratore() {
             if (response.ok) {
                 console.log('Corso aggiornato con successo');
                 alert('Corso aggiornato con successo!');
-                setEditingCourseId(null); // Reimposta editingCourseId a null
+                setEditingCourseId(null);
             } else {
                 const errorMessage = await response.text();
                 console.log('Errore durante l\'aggiornamento del corso:', response.status, errorMessage);
