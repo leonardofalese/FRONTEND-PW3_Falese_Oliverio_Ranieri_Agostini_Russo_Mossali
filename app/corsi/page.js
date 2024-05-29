@@ -2,15 +2,52 @@
 
 import { useEffect, useState } from 'react'
 
-import Header from '@/app/corsi/components/header'
 import Footer from '@/components/footer'
 
 import styles from './page.module.css'
 
 export default function Corsi() {
+    const [Header, setHeader] = useState(null);
+    const [userData, setUserData] = useState({
+        name: "",
+        surname: "",
+        email: "",
+        role: ""
+    });
     const [corsi, setCorsi] = useState([]);
 
     useEffect(() => {
+
+        const fetchUserData = async () => {
+            try {
+                const response = await fetch('http://localhost:8080/users', {
+                    method: 'GET',
+                    credentials: 'include',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                });
+                if (response.ok) {
+                    const userData = await response.json();
+                    setUserData(userData);
+                    console.log(userData);
+                    if (userData.role === "STUDENT") {
+                        const { default: Header } = await import('@/app/profile/components/header');
+                        setHeader(() => Header);
+                    } else {
+                        const { default: Header } = await import('@/app/corsi/components/header');
+                        setHeader(() => Header);
+                    }
+                } else {
+                    throw new Error('Errore nella richiesta dei dati utente');
+                }
+            } catch (error) {
+                console.error('Errore durante il recupero dei dati utente:', error);
+            }
+        };
+
+        fetchUserData();
+
         const fetchCourses = async () => {
             try {
                 const response = await fetch('http://localhost:8080/courses', {
@@ -45,7 +82,7 @@ export default function Corsi() {
 
     return (
         <div>
-            <Header />
+            {Header && <Header />}
             <h1 className={styles.h1}>Scopri i nostri corsi</h1>
             <div className={styles.body}>
                 {Object.entries(corsi).map(([categoria, corsiCategoria]) => (

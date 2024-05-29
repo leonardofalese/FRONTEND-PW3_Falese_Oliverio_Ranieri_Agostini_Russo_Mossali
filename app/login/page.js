@@ -96,7 +96,7 @@ export default function LoginPage() {
                         </div>
                     </div>
                     <div className={styles.paragrafo}>
-                        <p className={styles.p}>Bentornato in ITS Incom! Accedi al tuo account per iniziare o continuare il
+                        <p className={styles.p}><span className={styles.bentornato}>Bentornato</span> in ITS Incom! Accedi al tuo account per iniziare o continuare il
                             tuo percorso di apprendimento. Qui troverai tutti i tuoi corsi, risorse e strumenti necessari
                             per raggiungere i tuoi obiettivi. Non vediamo l'ora di aiutarti a crescere e a sviluppare le tue
                             competenze. Inserisci le tue credenziali!</p>
