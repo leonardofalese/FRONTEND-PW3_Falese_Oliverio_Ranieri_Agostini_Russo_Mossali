@@ -4,7 +4,7 @@ import Image from "next/image"
 import logoImg from '@/public/images/ITSLogo.jpeg'
 import admin from '@/public/images/Admin.jpeg'
 
-import styles from '@/app/amministratore/components/header.module.css'
+import styles from '@/app/profile/components/header.module.css'
 
 export default function Header() {
 
@@ -40,11 +40,13 @@ export default function Header() {
                     <Image src={logoImg} alt="ITS Incom" priority />
                 </Link>
                 <div className={styles.dropdown}>
-                    <Link href={'/studente'}><Image className={styles.admin} src={admin} alt="Admin" /></Link>
-                    <div className={styles.dropdownContent}>
-                        <Link className={styles.link} href="#">
-                            <p className={styles.p} onClick={handleLogout}>Logout</p>
-                        </Link>
+                    <button><Link href={'/studente'}><Image className={styles.admin} src={admin} alt="Admin" /></Link></button>
+                    <div className={styles.content}>
+                        <Link className={styles.link} href="/notifications"><p className={styles.p}>Notifiche</p></Link>
+                        <hr className={styles.hr}></hr>
+                        <Link className={styles.link} href="/calendar"><p className={styles.p}>Calendario</p></Link>
+                        <hr className={styles.hr}></hr>
+                        <Link className={styles.link} href=""><p className={styles.p} onClick={handleLogout}>Logout</p></Link>
                     </div>
                 </div>
             </div>

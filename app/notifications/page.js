@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from 'react'
 
-import Header from '@/app/profile/components/header'
+import Header from '@/app/notifications/components/header'
 import Footer from '@/components/footer'
 
 import { motion } from 'framer-motion'

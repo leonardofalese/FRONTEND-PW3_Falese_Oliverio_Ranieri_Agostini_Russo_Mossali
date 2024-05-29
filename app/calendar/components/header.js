@@ -4,7 +4,7 @@ import Image from "next/image"
 import logoImg from '@/public/images/ITSLogo.jpeg'
 import admin from '@/public/images/Admin.jpeg'
 
-import styles from '@/app/dashboard/components/header.module.css'
+import styles from '@/app/calendar/components/header.module.css'
 
 export default function Header() {
 
@@ -42,10 +42,14 @@ export default function Header() {
                 <div className={styles.dropdown}>
                     <button><Link href={'/studente'}><Image className={styles.admin} src={admin} alt="Admin" /></Link></button>
                     <div className={styles.content}>
+                        <Link className={styles.link} href="/profile"><p className={styles.p}>Profilo</p></Link>
+                        <hr className={styles.hr}></hr>
+                        <Link className={styles.link} href="/notifications"><p className={styles.p}>Notifiche</p></Link>
+                        <hr className={styles.hr}></hr>
                         <Link className={styles.link} href=""><p className={styles.p} onClick={handleLogout}>Logout</p></Link>
                     </div>
                 </div>
-            </div >
+            </div>
         </header>
     );
 }

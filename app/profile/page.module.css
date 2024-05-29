@@ -13,7 +13,7 @@
 }
 
 .content {
-  width: 70%;
+  width: 60%;
   background: rgb(255, 255, 255);
   border-radius: 10px;
   border: rgb(214, 214, 214);
@@ -87,6 +87,12 @@
   to {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+
+@media (max-width: 1200px) {
+  .content {
+    width: 50%;
   }
 }
 

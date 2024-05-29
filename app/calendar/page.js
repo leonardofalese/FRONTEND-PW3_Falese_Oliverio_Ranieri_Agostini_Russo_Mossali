@@ -2,7 +2,7 @@
 
 import { useState } from 'react'
 
-import Header from '@/app/profile/components/header'
+import Header from '@/app/calendar/components/header'
 import Footer from '@/components/footer'
 
 import Calendar from 'react-calendar'
