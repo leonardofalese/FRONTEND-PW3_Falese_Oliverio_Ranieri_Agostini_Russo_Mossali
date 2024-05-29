@@ -11,7 +11,7 @@ import plus from "@/public/images/plus.jpeg"
 
 import styles from './page.module.css'
 
-export default function Candidature() {
+export default function Test() {
     const [candidature, setCandidature] = useState([]);
 
     useEffect(() => {
@@ -29,9 +29,9 @@ export default function Candidature() {
                     const data = await response.json();
                     console.log('Dati candidature:', data);
 
-                    const sortedCandidature = data.sort((a, b) => a.idUser.localeCompare(b.idUser));
+                    const sortedCandidature = data.sort((a, b) => a.idUser.toString().localeCompare(b.idUser.toString()));
 
-                    setCandidature(sortedCandidature);
+                   setCandidature(sortedCandidature);
                 } else {
                     const errorMessage = await response.text();
                     console.error('Errore durante il fetch delle candidature:', response.status, errorMessage);
@@ -96,7 +96,7 @@ export default function Candidature() {
     return (
         <div>
             <Header />
-            <h1 className={styles.h1}>Candidature attive</h1>
+            <h1 className={styles.h1}>Test</h1>
             <div className={styles.modify}>
                 <button onClick={toggleEditColumn} className={styles.button1}>
                     {showEditColumn ? 'Nascondi Modifica' : 'Mostra Modifica'}
@@ -117,43 +117,40 @@ export default function Candidature() {
                                 </tr>
                             </thead>
                             <tbody>
-                                {candidature.map((candidatura) => (
-                                    <tr key={candidatura.candidateId} className={styles.tr}>
-                                        <td className={styles.td}>{candidatura.candidateId}</td>
-                                        <td className={styles.td}>{candidatura.idUser}</td>
-                                        <td className={styles.td}>{candidatura.user.surname}</td>
-                                        <td className={styles.td}>{candidatura.user.name}</td>
-                                        <td className={styles.td}>{candidatura.testState}</td>
-                                        {showEditColumn && (
-                                            <td className={styles.td}>
-                                                {isEditing && editingCandidate && editingCandidate.id === candidatura.id ? (
-                                                    <>
-                                                        <select
-                                                            value={selectedState}
-                                                            onChange={(e) => setSelectedState(e.target.value)}
-                                                        >
-                                                            <option value="PENDING">PENDING</option>
-                                                            <option value="PASSED">PASSED</option>
-                                                            <option value="FAILED">FAILED</option>
-                                                        </select>
-                                                        <button onClick={saveChanges}>Salva</button>
-                                                    </>
-                                                ) : (
-                                                    candidatura.state
-                                                )}
-                                            </td>
+                            {candidature.map((candidatura) => (
+                                <tr key={candidatura.candidateId} className={styles.tr}>
+                                    <td className={styles.td}>{candidatura.candidateId}</td>
+                                    <td className={styles.td}>{candidatura.user.id}</td>
+                                    <td className={styles.td}>{candidatura.user.surname}</td>
+                                    <td className={styles.td}>{candidatura.user.name}</td>
+                                    <td className={styles.td}>
+                                        {isEditing && editingCandidate && editingCandidate.candidateId === candidatura.candidateId ? (
+                                            <>
+                                                <select
+                                                    value={selectedState || candidatura.testState} // Set the value to the current test state
+                                                    onChange={(e) => setSelectedState(e.target.value)}
+                                                >
+                                                    <option value="PENDING">PENDING</option>
+                                                    <option value="PASSED">PASSED</option>
+                                                    <option value="FAILED">FAILED</option>
+                                                </select>
+                                                <button onClick={saveChanges}>Salva</button>
+                                            </>
+                                        ) : (
+                                            candidatura.testState
                                         )}
-                                        {showEditColumn && (
-                                            <td className={styles.td}>
-                                                <button onClick={() => startEditing(candidatura)}
+                                    </td>
+                                    {showEditColumn && (
+                                        <td className={styles.td}>
+                                            <button onClick={() => startEditing(candidatura)}
                                                     className={styles.editButton}>
-                                                    <Image src={plus} alt="plus" width={20} height={20}
-                                                        className={styles.img} />Modifica
-                                                </button>
-                                            </td>
-                                        )}
-                                    </tr>
-                                ))}
+                                                <Image src={plus} alt="plus" width={20} height={20}
+                                                       className={styles.img} />Modifica
+                                            </button>
+                                        </td>
+                                    )}
+                                </tr>
+                            ))}
                             </tbody>
                         </table>
                     </div>
