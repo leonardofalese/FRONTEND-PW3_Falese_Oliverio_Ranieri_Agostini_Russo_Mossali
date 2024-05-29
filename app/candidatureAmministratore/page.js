@@ -68,6 +68,7 @@ export default function Candidature() {
                 location.reload();
             } else {
                 const errorMessage = await response.text();
+                alert('Errore, test non ancora effettuato', response.status, errorMessage);
                 console.log('Errore durante l\'aggiornamento dello stato del candidato:', response.status, errorMessage);
             }
         } catch (error) {
