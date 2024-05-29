@@ -11,7 +11,7 @@ import plus from '@/public/images/plus.jpeg'
 
 import styles from './page.module.css'
 
-export default function Corsi() {
+export default function CorsiAmministratore() {
     const [corsi, setCorsi] = useState([]);
     const [showEditColumn, setShowEditColumn] = useState(false);
     const [isAdding, setIsAdding] = useState(false);
@@ -127,6 +127,37 @@ export default function Corsi() {
         }
     };
 
+    const [editingCourseId, setEditingCourseId] = useState(null);
+
+    const updateCourse = async (corso) => {
+        try {
+            const updatedCorso = {
+                name: corso.name,
+                category: corso.category,
+            };
+
+            const response = await fetch(`http://localhost:8080/courses/${corso.idCourse}`, {
+                method: 'PUT',
+                credentials: 'include',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(updatedCorso),
+            });
+
+            if (response.ok) {
+                console.log('Corso aggiornato con successo');
+                alert('Corso aggiornato con successo!');
+                setEditingCourseId(null); // Reimposta editingCourseId a null
+            } else {
+                const errorMessage = await response.text();
+                console.log('Errore durante l\'aggiornamento del corso:', response.status, errorMessage);
+            }
+        } catch (error) {
+            console.log('Errore:', error);
+        }
+    };
+
     return (
         <div>
             <Header />
@@ -152,52 +183,64 @@ export default function Corsi() {
                 <div className={styles.card}>
                     <table className={styles.table}>
                         <thead>
-                            <tr>
-                                <th className={styles.th}>Nome</th>
-                                <th className={styles.th}>Categoria</th>
-                                {showEditColumn && <th className={styles.th}>Modifica</th>}
-                            </tr>
+                        <tr>
+                            <th className={styles.th}>Nome</th>
+                            <th className={styles.th}>Categoria</th>
+                            {showEditColumn && <th className={styles.th}>Modifica</th>}
+                        </tr>
                         </thead>
                         <tbody>
-                            {corsi.length > 0 && corsi.map((corso, index) => (
-                                <tr key={corso.idCourse || 'new'} className={styles.tr}>
-                                    <td className={styles.td}>
-                                        {corso.idCourse === 'new' ? (
-                                            <input className={styles.input} type="text" value={corso.name || ''}
-                                                onChange={(e) => handleInputChange(index, 'name', e.target.value)} />
-                                        ) : (
-                                            corso.name || ''
-                                        )}
-                                    </td>
-                                    <td className={styles.td}>
-                                        {corso.idCourse === 'new' ? (
-                                            <select className={styles.option} value={corso.category || ''}
-                                                onChange={(e) => handleInputChange(index, 'category', e.target.value)}>
-                                                <option value="">Seleziona una categoria</option>
-                                                {categories.map((category) => (
-                                                    <option key={category} value={category}>{category}</option>
-                                                ))}
-                                            </select>
-                                        ) : (
-                                            corso.category || ''
-                                        )}
-                                    </td>
-                                    {showEditColumn && (
-                                        <td className={styles.td}>
-                                            <button onClick={() => removeCourse(corso.idCourse)}
-                                                className={styles.editButton}>
-                                                <Image src={plus} alt="plus" width={20} height={20}
-                                                    className={styles.img} /> Rimuovi
-                                            </button>
-                                        </td>
+                        {corsi.length > 0 && corsi.map((corso, index) => (
+                            <tr key={corso.idCourse || 'new'} className={styles.tr}>
+                                <td className={styles.td}>
+                                    {showEditColumn && corso.idCourse === editingCourseId ? (
+                                        <input className={styles.input} type="text" value={corso.name || ''}
+                                               onChange={(e) => handleInputChange(index, 'name', e.target.value)}/>
+                                    ) : (
+                                        corso.name || ''
                                     )}
-                                </tr>
-                            ))}
+                                </td>
+                                <td className={styles.td}>
+                                    {showEditColumn && corso.idCourse === editingCourseId ? (
+                                        <select className={styles.option} value={corso.category || ''}
+                                                onChange={(e) => handleInputChange(index, 'category', e.target.value)}>
+                                            <option value="">Seleziona una categoria</option>
+                                            {categories.map((category) => (
+                                                <option key={category} value={category}>{category}</option>
+                                            ))}
+                                        </select>
+                                    ) : (
+                                        corso.category || ''
+                                    )}
+                                </td>
+                                {showEditColumn && (
+                                    <td className={styles.td}>
+                                        {corso.idCourse === editingCourseId ? (
+                                            <button onClick={() => updateCourse(corso)} className={styles.editButton}>
+                                                <Image src={plus} alt="plus" width={20} height={20}
+                                                       className={styles.img}/> Salva
+                                            </button>
+                                        ) : (
+                                            <button onClick={() => setEditingCourseId(corso.idCourse)}
+                                                    className={styles.editButton}>
+                                                <Image src={plus} alt="plus" width={20} height={20}
+                                                       className={styles.img}/> Modifica
+                                            </button>
+                                        )}
+                                        <button onClick={() => removeCourse(corso.idCourse)}
+                                                className={styles.editButton}>
+                                            <Image src={plus} alt="plus" width={20} height={20}
+                                                   className={styles.img}/> Rimuovi
+                                        </button>
+                                    </td>
+                                )}
+                            </tr>
+                        ))}
                         </tbody>
                     </table>
                 </div>
             </div>
-            <Footer />
+            <Footer/>
         </div>
     );
 }
