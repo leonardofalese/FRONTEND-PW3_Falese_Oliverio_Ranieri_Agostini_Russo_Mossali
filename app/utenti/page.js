@@ -4,7 +4,7 @@ import { useEffect, useState } from "react"
 import { useRouter } from 'next/navigation'
 
 import Header from '@/app/amministratore/components/header'
-import Footer from '@/app/amministratore/components/footer'
+import Footer from '@/components/footer'
 import Image from "next/image"
 
 import plus from "@/public/images/plus.jpeg"

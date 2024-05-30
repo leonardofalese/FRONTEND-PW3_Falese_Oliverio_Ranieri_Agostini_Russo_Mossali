@@ -10,7 +10,7 @@ import Candidature from '@/public/images/candidature.jpeg'
 import Test from '@/public/images/test.jpeg'
 
 import Header from '@/app/amministratore/components/header'
-import Footer from '@/app/amministratore/components/footer'
+import Footer from '@/components/footer'
 
 import { useRouter } from 'next/navigation'
 
