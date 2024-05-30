@@ -28,6 +28,9 @@ export default function Profile() {
         });
         if (response.ok) {
           const userData = await response.json();
+          if (userData.courseSelected === null) {
+            userData.courseSelected = {name: "Ancora nessun corso selezionato"};
+          }
           setUserData(userData);
         } else {
           throw new Error('Errore nella richiesta dei dati utente');

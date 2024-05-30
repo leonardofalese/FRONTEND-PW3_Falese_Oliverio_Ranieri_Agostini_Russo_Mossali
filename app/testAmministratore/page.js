@@ -93,6 +93,10 @@ export default function Test() {
         setEditingCandidate(null);
     };
 
+    const sendNotification = async () => {
+
+    }
+
     return (
         <div>
             <Header />
