@@ -1,4 +1,5 @@
 .hero {
+    z-index: -1;
     position: relative;
     background: url('/images/ImageITS3.jpeg') no-repeat center center;
     background-size: contain;

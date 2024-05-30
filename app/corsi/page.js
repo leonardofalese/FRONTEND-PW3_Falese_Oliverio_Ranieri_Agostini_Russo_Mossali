@@ -34,6 +34,9 @@ export default function Corsi() {
                     if (userData.role === "STUDENT") {
                         const { default: Header } = await import('@/app/profile/components/header');
                         setHeader(() => Header);
+                    } else if (userData.role === "ADMIN") {
+                        const { default: Header } = await import('@/app/amministratore/components/header');
+                        setHeader(() => Header);
                     }
                 } else {
                     const { default: Header } = await import('@/app/corsi/components/header');
