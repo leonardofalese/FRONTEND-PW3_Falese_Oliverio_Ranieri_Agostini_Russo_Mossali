@@ -4,7 +4,7 @@ import Image from "next/image"
 import logoImg from '@/public/images/ITSLogo.jpeg'
 import admin from '@/public/images/Admin.jpeg'
 
-import styles from '@/app/dashboard/components/header.module.css'
+import styles from '@/app/candidatureAmministratore/components/header.module.css'
 
 export default function Header() {
 
@@ -40,12 +40,18 @@ export default function Header() {
                     <Image src={logoImg} alt="ITS Incom" priority />
                 </Link>
                 <div className={styles.dropdown}>
-                    <button><Link href={'/studente'}><Image className={styles.admin} src={admin} alt="Admin" /></Link></button>
+                    <button><Link href={'/amministratore'}><Image className={styles.admin} src={admin} alt="Admin" /></Link></button>
                     <div className={styles.content}>
+                        <Link className={styles.link} href="/utenti"><p className={styles.p}>Utenti</p></Link>
+                        <hr className={styles.hr}></hr>
+                        <Link className={styles.link} href="/corsiAmministratore"><p className={styles.p}>Corsi</p></Link>
+                        <hr className={styles.hr}></hr>
+                        <Link className={styles.link} href="/testAmministratore"><p className={styles.p}>Test</p></Link>
+                        <hr className={styles.hr}></hr>
                         <Link className={styles.link} href=""><p className={styles.p} onClick={handleLogout}>Logout</p></Link>
                     </div>
                 </div>
             </div >
-        </header>
+        </header >
     );
 }

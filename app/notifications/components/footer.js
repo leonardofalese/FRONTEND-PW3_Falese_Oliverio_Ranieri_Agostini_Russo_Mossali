@@ -16,10 +16,9 @@ export default function Footer() {
                             <h2 className={styles.h2}>Naviga</h2>
                             <ul className={styles.ul}>
                                 <li className={styles.li}><Link className={styles.link} href="/">Home</Link></li>
-                                <li className={styles.li}><Link className={styles.link} href="/utenti">Utenti</Link></li>
-                                <li className={styles.li}><Link className={styles.link} href="/corsiAmministratore">Corsi</Link></li>
-                                <li className={styles.li}><Link className={styles.link} href="/candidatureAmministratore">Candidature</Link></li>
-                                <li className={styles.li}><Link className={styles.link} href="/testAmministratore">Test</Link></li>
+                                <li className={styles.li}><Link className={styles.link} href="/profile">Profilo</Link></li>
+                                <li className={styles.li}><Link className={styles.link} href="/notifications">Notifiche</Link></li>
+                                <li className={styles.li}><Link className={styles.link} href="/calendar">Calendario</Link></li>
                             </ul>
                         </div>
                     </div>

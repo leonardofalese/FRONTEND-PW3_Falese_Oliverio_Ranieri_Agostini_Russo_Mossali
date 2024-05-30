@@ -3,7 +3,7 @@
 import { useState } from 'react'
 
 import Header from '@/app/calendar/components/header'
-import Footer from '@/components/footer'
+import Footer from '@/app/dashboard/components/footer'
 
 import Calendar from 'react-calendar'
 import 'react-calendar/dist/Calendar.css'

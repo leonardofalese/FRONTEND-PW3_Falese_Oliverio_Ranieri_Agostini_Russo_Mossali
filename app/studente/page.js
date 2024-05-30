@@ -7,8 +7,8 @@ import Image from 'next/image'
 import Utente from '@/public/images/Utenti.jpeg'
 import Corsi from '@/public/images/corsi.jpeg'
 
-import Header from '@/app/dashboard/components/header'
-import Footer from '@/components/footer'
+import Header from '@/app/studente/components/header'
+import Footer from '@/app/studente/components/footer'
 
 import { useRouter } from 'next/navigation'
 

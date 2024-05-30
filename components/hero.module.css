@@ -1,5 +1,4 @@
 .hero {
-    z-index: -1;
     position: relative;
     background: url('/images/ImageITS3.jpeg') no-repeat center center;
     background-size: contain;
@@ -23,12 +22,11 @@
     background: inherit;
     background-size: cover;
     filter: blur(3px);
-    z-index: 1;
 }
 
 .heroContent {
     position: relative;
-    z-index: 2;
+    z-index: 1;
 }
 
 .h1 {
@@ -49,6 +47,7 @@
 }
 
 .ctaButton {
+    z-index: 3;
     padding: 1rem 2rem;
     background: #0070f3;
     color: #fff;

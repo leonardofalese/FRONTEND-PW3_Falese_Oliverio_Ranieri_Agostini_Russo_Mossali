@@ -2,8 +2,8 @@
 
 import { useEffect, useState } from 'react'
 
-import Header from '@/app/amministratore/components/header'
-import Footer from '@/components/footer'
+import Header from '@/app/candidatureAmministratore/components/header'
+import Footer from '@/app/amministratore/components/footer'
 
 import Image from "next/image"
 

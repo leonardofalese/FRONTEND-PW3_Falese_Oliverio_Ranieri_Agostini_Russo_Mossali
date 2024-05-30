@@ -1,7 +1,7 @@
 'use client'
 
-import Header from '@/app/dashboard/components/header'
-import Footer from '@/components/footer'
+import Header from '@/app/studente/components/header'
+import Footer from '@/app/dashboard/components/footer'
 
 import Link from 'next/link'
 import Image from 'next/image'

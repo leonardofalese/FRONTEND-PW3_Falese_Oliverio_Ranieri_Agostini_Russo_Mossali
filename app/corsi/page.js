@@ -32,7 +32,7 @@ export default function Corsi() {
                     setUserData(userData);
                     console.log(userData);
                     if (userData.role === "STUDENT") {
-                        const { default: Header } = await import('@/app/profile/components/header');
+                        const { default: Header } = await import('@/app/studente/components/header');
                         setHeader(() => Header);
                     } else if (userData.role === "ADMIN") {
                         const { default: Header } = await import('@/app/amministratore/components/header');

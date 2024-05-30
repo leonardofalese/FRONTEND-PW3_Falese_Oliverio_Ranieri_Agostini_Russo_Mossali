@@ -1,7 +1,7 @@
 'use client'
 
 import Header from '@/app/profile/components/header'
-import Footer from '@/components/footer'
+import Footer from '@/app/dashboard/components/footer'
 
 import styles from './page.module.css'
 import {useEffect, useState} from "react";

@@ -1,8 +1,6 @@
 // import Head from 'next/head'
 "use client";
 
-import Header from '../components/header'
-
 import Hero from '../components/hero'
 import About from '../components/about'
 import Courses from '../components/courses'
@@ -41,14 +39,14 @@ export default function Home() {
                     setUserData(userData);
                     console.log(userData);
                     if (userData.role === "STUDENT") {
-                        const { default: Header } = await import('@/app/profile/components/header');
+                        const { default: Header } = await import('@/app/studente/components/header');
                         setHeader(() => Header);
                     } else if (userData.role === "ADMIN") {
                         const { default: Header } = await import('@/app/amministratore/components/header');
                         setHeader(() => Header);
                     }
                 } else {
-                    const { default: Header } = await import('@/app/corsi/components/header');
+                    const { default: Header } = await import('@/components/header');
                     setHeader(() => Header);
                     throw new Error('Errore nella richiesta dei dati utente');
                 }
