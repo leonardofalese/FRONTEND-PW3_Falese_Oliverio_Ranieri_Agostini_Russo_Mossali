@@ -44,7 +44,7 @@ export default function Header() {
                     <div className={styles.content}>
                         <Link className={styles.link} href="/utenti"><p className={styles.p}>Utenti</p></Link>
                         <hr className={styles.hr}></hr>
-                        <Link className={styles.link} href="/candidatureAmministratore"><p className={styles.p}>Candidature</p></Link>
+                        <Link className={styles.link} href="/candidatureAmministratore"><p className={styles.p}>Cand.</p></Link>
                         <hr className={styles.hr}></hr>
                         <Link className={styles.link} href="/testAmministratore"><p className={styles.p}>Test</p></Link>
                         <hr className={styles.hr}></hr>

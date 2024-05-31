@@ -46,7 +46,7 @@ export default function Header() {
                         <hr className={styles.hr}></hr>
                         <Link className={styles.link} href="/corsiAmministratore"><p className={styles.p}>Corsi</p></Link>
                         <hr className={styles.hr}></hr>
-                        <Link className={styles.link} href="/candidatureAmministratore"><p className={styles.p}>Candidature</p></Link>
+                        <Link className={styles.link} href="/candidatureAmministratore"><p className={styles.p}>Cand.</p></Link>
                         <hr className={styles.hr}></hr>
                         <Link className={styles.link} href=""><p className={styles.p} onClick={handleLogout}>Logout</p></Link>
                     </div>

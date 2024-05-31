@@ -86,12 +86,6 @@ export default function LoginPage() {
                                     <input className={styles.input} type="password" id="password" placeholder='Inserisci la password...' required />
                                 </div>
                                 <button className={styles.button} type="submit">Login</button>
-                                <Link href={'/amministratore'}>
-                                    <button>amministratore</button>
-                                </Link>
-                                <Link href={'/studente'}>
-                                    <button>utente</button>
-                                </Link>
                             </form>
                         </div>
                     </div>
