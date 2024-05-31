@@ -193,15 +193,15 @@ export default function CorsiAmministratore() {
                         {corsi.length > 0 && corsi.map((corso, index) => (
                             <tr key={corso.idCourse || 'new'} className={styles.tr}>
                                 <td className={styles.td}>
-                                    {showEditColumn && corso.idCourse === editingCourseId ? (
+                                    {showEditColumn && (corso.idCourse === editingCourseId || corso.idCourse === 'new') ? (
                                         <input className={styles.input} type="text" value={corso.name || ''}
-                                               onChange={(e) => handleInputChange(index, 'name', e.target.value)}/>
+                                               onChange={(e) => handleInputChange(index, 'name', e.target.value)} />
                                     ) : (
                                         corso.name || ''
                                     )}
                                 </td>
                                 <td className={styles.td}>
-                                    {showEditColumn && corso.idCourse === editingCourseId ? (
+                                    {showEditColumn && (corso.idCourse === editingCourseId || corso.idCourse === 'new') ? (
                                         <select className={styles.option} value={corso.category || ''}
                                                 onChange={(e) => handleInputChange(index, 'category', e.target.value)}>
                                             <option value="">Seleziona una categoria</option>
@@ -218,19 +218,23 @@ export default function CorsiAmministratore() {
                                         {corso.idCourse === editingCourseId ? (
                                             <button onClick={() => updateCourse(corso)} className={styles.editButton}>
                                                 <Image src={plus} alt="plus" width={20} height={20}
-                                                       className={styles.img}/> Salva
+                                                       className={styles.img} /> Salva
+                                            </button>
+                                        ) : corso.idCourse === 'new' ? (
+                                            <button onClick={() => addCourse(corso)} className={styles.editButton}>
+                                                <Image src={plus} alt="plus" width={20} height={20}
+                                                       className={styles.img} /> Salva
                                             </button>
                                         ) : (
-                                            <button onClick={() => setEditingCourseId(corso.idCourse)}
-                                                    className={styles.editButton}>
+                                            <button onClick={() => setEditingCourseId(corso.idCourse)} className={styles.editButton}>
                                                 <Image src={plus} alt="plus" width={20} height={20}
-                                                       className={styles.img}/> Modifica
+                                                       className={styles.img} /> Modifica
                                             </button>
                                         )}
                                         <button onClick={() => removeCourse(corso.idCourse)}
                                                 className={styles.editButton}>
                                             <Image src={plus} alt="plus" width={20} height={20}
-                                                   className={styles.img}/> Rimuovi
+                                                   className={styles.img} /> Rimuovi
                                         </button>
                                     </td>
                                 )}
